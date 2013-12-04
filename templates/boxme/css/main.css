@@ -1,0 +1,45 @@
+@import url("boxme-reset.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body{margin:0;padding:0;font-family: "Open Sans", Helvetica, Arial, sans-serif;font-size: 13px;font-weight:300;color:#727272;background:url(../img/bg.jpg) no-repeat fixed;}
+
+#wrapper{width:100%;height:auto;}
+#wrapper h1{color:#484848;font-weight:800;font-size:40px;}
+#wrapper h3{font-family: "Lobster", cursive;color:#c5b194;font-size:32px;}
+
+.push_button{
+	position:relative;
+	width:200px;
+	font-family: "Lobster", cursive;
+	font-size:21px;
+	color:#FFF;
+	display:block;
+	text-decoration:none;
+	margin:0 auto;
+	border-radius:5px;
+	background:#e66954;
+	text-align:center;
+	padding:10px 30px;
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	-webkit-box-shadow: 0px 5px 0px #ae2b2d;
+    -moz-box-shadow: 0px 5px 0px #ae2b2d;
+    box-shadow: 0px 5px 0px #ae2b2d;
+}
+.push_button:hover{color:#fff;text-decoration:none;}
+.push_button:active{
+	-webkit-box-shadow: 0px 2px 0px #ae2b2d;
+    -moz-box-shadow: 0px 2px 0px #ae2b2d;
+    box-shadow: 0px 2px 0px #ae2b2d;
+    position:relative;
+    top:5px;
+    text-decoration:none;
+}
+
+
+.line1{border-color:#d2c0a4;}
+.line2{border-color:#f9e8ce;margin-top:-20px;}
+
+

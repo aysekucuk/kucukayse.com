@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/test_project_2.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/admin.py" afterPath="$PROJECT_DIR$/testApp/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/models.py" afterPath="$PROJECT_DIR$/testApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testProject/settings.py" afterPath="$PROJECT_DIR$/testProject/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testProject/urls.py" afterPath="$PROJECT_DIR$/testProject/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/views.py" afterPath="$PROJECT_DIR$/testApp/views.py" />
-    </list>
+    <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="" />
     <ignored path="test_project_2.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,19 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testProject/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="11" column="1" selection-start="299" selection-end="299" vertical-scroll-proportion="0.34005037" vertical-offset="0" max-vertical-offset="397">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.6599496" vertical-offset="1028" max-vertical-offset="1425">
+            <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="1425">
               <folding />
             </state>
           </provider>
@@ -389,7 +376,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="32" width="1231" height="760" extended-state="0" />
+    <frame x="49" y="32" width="1231" height="760" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -400,7 +387,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -426,13 +413,6 @@
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="8" selection-start="91" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
@@ -464,7 +444,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.6599496" vertical-offset="1028" max-vertical-offset="1425">
+        <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProject/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="1" selection-start="299" selection-end="299" vertical-scroll-proportion="0.34005037" vertical-offset="0" max-vertical-offset="397">
           <folding />
         </state>
       </provider>

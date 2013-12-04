@@ -1,0 +1,67 @@
+.swtch-opener{position:absolute;top:0;right:-50px;background-color:#f2836b;}
+.swtch-opener a{font-size:22px;color:#fff;padding:5px 15px;display:block;}
+.swtch-opener a:hover{text-decoration:none;}
+#style-switcher{width:230px;height:500px;background-color:#fff;border-bottom:1px solid #d4d4d4;border-right:1px solid #d4d4d4;position:fixed;top:50px;left:-230px;z-index:99999999999999999999999999999999999999999999;transition: left ease-in-out .5s;-webkit-transition: left ease-in-out .5s;}
+.swopen{left:0 !important;}
+.swclose{left:-230px !important;}
+.swtch-header{height:41px;padding-left:15px;padding-top:15px;background-color:#f3f2ed;border-bottom:1px solid #e8e8e8;}
+.swtch-header h4{font-size:13px;color:#f2836b;font-weight:600;}
+.styleswtch{padding:10px;}
+.styleswtch h4{font-size:13px;}
+.ul-layout li a{float:left;padding:5px 10px;margin-right:10px;background-color:#f3f2ed;text-decoration:none;color:#727272;font-size:12px;font-weight:400;}
+.ul-layout li a:hover{background-color:#f2836b;color:#fff;}
+.ul-layout li a.active{background-color:#f2836b;color:#fff;}
+.ul-colors li{float:left;width:18px;height:15px;cursor:pointer;margin-right:5px;}
+#color1{background-color:#f2836b;}
+#color2{background-color:#fb683d;}
+#color3{background-color:#ffce70;}
+#color4{background-color:#accfcc;}
+#color5{background-color:#87ccc0;}
+#color6{background-color:#6d8b9f;}
+#color7{background-color:#66bcd9;}
+#color8{background-color:#727273;}
+#color9{background-color:#9ad172;}
+.ul-pattern li{float:left;width:20px;height:20px;cursor:pointer;margin-right:10px;margin-bottom:10px;}
+#pattern1{background:url(../swtch/pattern1.png) no-repeat;}
+#pattern2{background:url(../swtch/pattern2.png) no-repeat;}
+#pattern3{background:url(../swtch/pattern3.png) no-repeat;}
+#pattern4{background:url(../swtch/pattern4.png) no-repeat;}
+#pattern5{background:url(../swtch/pattern5.png) no-repeat;}
+#pattern6{background:url(../swtch/pattern6.png) no-repeat;}
+#pattern7{background:url(../swtch/pattern7.png) no-repeat;}
+#pattern8{background:url(../swtch/pattern8.png) no-repeat;}
+#pattern9{background:url(../swtch/pattern9.png) no-repeat;}
+#pattern10{background:url(../swtch/pattern10.png) no-repeat;}
+#pattern11{background:url(../swtch/pattern11.png) no-repeat;}
+#pattern12{background:url(../swtch/pattern12.png) no-repeat;}
+.ul-background li{float:left;width:40px;height:40px;cursor:pointer;margin-right:10px;margin-bottom:10px;}
+#background1{background:url(../swtch/background1.png) no-repeat;}
+#background2{background:url(../swtch/background2.png) no-repeat;}
+#background3{background:url(../swtch/background3.png) no-repeat;}
+#background4{background:url(../swtch/background4.png) no-repeat;}
+#background5{background:url(../swtch/background5.png) no-repeat;}
+#background6{background:url(../swtch/background6.png) no-repeat;}
+#background7{background:url(../swtch/background7.png) no-repeat;}
+#background8{background:url(../swtch/background8.png) no-repeat;}
+.stylereset{padding:5px 10px;margin-right:10px;background-color:#f3f2ed;text-decoration:none;color:#727272;font-size:12px;font-weight:400;}
+.stylereset:hover{background-color:#f2836b;color:#fff;text-decoration:none;}
+.pattern1{background:url(../swtch/pattern1.png) repeat;}
+.pattern2{background:url(../swtch/pattern2.png) repeat;}
+.pattern3{background:url(../swtch/pattern3.png) repeat;}
+.pattern4{background:url(../swtch/pattern4.png) repeat;}
+.pattern5{background:url(../swtch/pattern5.png) repeat;}
+.pattern6{background:url(../swtch/pattern6.png) repeat;}
+.pattern7{background:url(../swtch/pattern7.png) repeat;}
+.pattern8{background:url(../swtch/pattern8.png) repeat;}
+.pattern9{background:url(../swtch/pattern9.png) repeat;}
+.pattern10{background:url(../swtch/pattern10.png) repeat;}
+.pattern11{background:url(../swtch/pattern11.png) repeat;}
+.pattern12{background:url(../swtch/pattern12.png) repeat;}
+.background1{background:url(../swtch/bg1.jpg) no-repeat fixed;}
+.background2{background:url(../swtch/bg2.jpg) no-repeat fixed;}
+.background3{background:url(../swtch/bg3.jpg) no-repeat fixed;}
+.background4{background:url(../swtch/bg4.jpg) no-repeat fixed;}
+.background5{background:url(../swtch/bg5.jpg) no-repeat fixed;}
+.background6{background:url(../swtch/bg6.jpg) no-repeat fixed;}
+.background7{background:url(../swtch/bg7.jpg) no-repeat fixed;}
+.background8{background:url(../swtch/bg8.jpg) no-repeat fixed;}

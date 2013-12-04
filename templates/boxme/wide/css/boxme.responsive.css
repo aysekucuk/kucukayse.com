@@ -1,0 +1,95 @@
+/* Responsive Navigation */
+#responsive-menu-toggle {position: absolute;top:0px;right:0;color: #fff;display: block;text-decoration: none;}
+#responsive-menu-toggle:after {background:url(../img/responsive-menu.png) no-repeat;width:35px;height:35px;display: block;content:'';}
+
+@media screen and (max-width: 991px) {
+#responsive-menu {position:absolute;top:0px;right:35px;width:auto;background-color:#232323;height: 9999px;overflow: hidden;z-index:99999999;}
+#responsive-menu > ul > li {height: auto !important;display: block;float: none;margin-left: 20px;overflow: auto;}
+#responsive-menu.closed{max-height:0px;}
+.site-menu ul{display:block !important;position:static;height:100% !important;overflow:auto;visibility:visible;z-index: 9999;padding:0;}
+.site-menu li *{border-bottom:1px solid #2d2d2d;line-height:25px;}
+.site-menu li:last-child *{border-bottom:0;}
+.site-menu li a{font-size:14px;}
+.site-menu li ul li a{padding-left:15px;font-size:13px;}
+.site-menu li ul li ul li a{padding-left:25px;font-size:13px;}	 
+.site-menu a{padding:5px;}
+.site-menu a.active{background-color:transparent;}
+.site-menu a:hover{background-color:transparent;}
+.site-menu li:hover, .site-menu li.site-menuHover{background:transparent;}
+.site-menu-arrows ul .site-menu-with-ul:after{display:none;}
+.site-menu ul li, .site-menu ul ul li{border-bottom:0;}
+#inside-header,#head-box{position:relative;}
+.btn-styl li{float:none;margin-bottom:40px;}
+}
+
+@media screen and (min-width: 992px) {
+#responsive-menu {position: relative;}
+#responsive-menu.closed {max-height: none;display: block;}
+#responsive-menu-toggle {display: none;}
+}
+/* Responsive Navigation */
+
+/* BoxMe Responsive */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+.col3-box{padding:15px 0;}
+.index-style .col3-box{padding:15px;}
+.comment-input-area textarea{width:630px;}
+}
+
+@media only screen and (max-width: 991px) {
+.container {padding:0 40px;}
+[class*="col-"]{padding-top:15px;padding-bottom:15px;}
+#client-list li,#sub-ul li{margin-top:20px;}
+#header{border-bottom:0;}
+.search{display:none;}
+.tabbed-area.tab-style2 li{float:none;border:1px solid #e5e5e5;}
+.price-box-2-columns{padding:0;}
+.rev-button-2{display:none;}
+#cust-lists li{margin-top:20px;}
+#cust-lists li.selected:after,#cust-lists li.selected:before,#cust-lists2 li.selected:after,#cust-lists2 li.selected:before{display:none;}
+}
+
+@media only screen and (max-width: 767px) {
+#sub-ul{margin-top:-20px;margin-bottom:20px;float:left !important;}
+.information h2{line-height:40px;}
+.blgtxt,.blog-post-pad{padding-left:0px;}
+.portfolio-filters ul li{margin-bottom:30px;}
+.footer-social,.footer-info{float:none !important;}
+.footer-info p{display:inline-block;zoom:1;}
+#social{display:inline-block;zoom:1;margin-top:0px !important;margin-bottom:20px;}
+.header-social{display:inline-block;zoom:1;margin-top:0px !important;margin-bottom:10px;}
+.feat-image{max-width:120px;}
+.swtch-opener{display:none;}
+}
+
+
+/* Tablet Portrait size to Tablet Landscape (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.search{margin-right:55px;margin-top:7px;}
+.comment-input-area textarea,.contact-input-area textarea{width:425px;}
+.contact-input-area .form-button{margin-right:10px;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.search{margin-right:55px;margin-top:7px;}
+.comment-input-area textarea,.contact-input-area textarea{width:400px;}
+.contact-input-area .form-button{margin-right:0px;}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+#prtfl-list li{margin-left:20px !important;}
+.logo{width:175px;margin-top:10px;}
+.comment-input-area textarea,.contact-input-area textarea{width:240px;}
+.contact-input-area .form-button{margin-right:0px;}
+.inner-comment{padding-left:0;}
+.portfolio-divid{width:70px;}
+#client-list li{margin-left:80px;}
+}
+/* BoxMe Responsive */
+
+
+
+
+
+
