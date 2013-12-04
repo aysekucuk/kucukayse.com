@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/boxme/index.html" afterPath="$PROJECT_DIR$/templates/boxme/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/models.py" afterPath="$PROJECT_DIR$/testApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testProject/settings.py" afterPath="$PROJECT_DIR$/testProject/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/boxme/wide/index-2.html" afterPath="$PROJECT_DIR$/templates/boxme/wide/index-2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/views.py" afterPath="$PROJECT_DIR$/testApp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="test_project_2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,23 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="27" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <folding>
-                <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
-                <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
-                <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/boxme/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="45" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.2757353" vertical-offset="315" max-vertical-offset="1335">
+            <state line="29" column="32" selection-start="749" selection-end="749" vertical-scroll-proportion="0.49657536" vertical-offset="0" max-vertical-offset="876">
               <folding />
             </state>
           </provider>
@@ -53,10 +39,8 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="32" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state line="7" column="34" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,7 +48,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="26" selection-start="124" selection-end="124" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="330">
+            <state line="16" column="7" selection-start="324" selection-end="324" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -73,10 +57,8 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testProject/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="46" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state line="10" column="46" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="270">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +66,28 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="16" selection-start="2042" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="859" max-vertical-offset="1455">
+            <state line="83" column="0" selection-start="2042" selection-end="2048" vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1455">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/boxme/wide/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="41" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="9135">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index-2.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/boxme/wide/index-2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="20" selection-start="7880" selection-end="7880" vertical-scroll-proportion="-11.0" vertical-offset="1866" max-vertical-offset="9585">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,18 +123,19 @@
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/testProject/urls.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/testApp/models.py" />
         <option value="$PROJECT_DIR$/testProject/settings.py" />
         <option value="$PROJECT_DIR$/templates/boxme/index.html" />
+        <option value="$PROJECT_DIR$/testApp/views.py" />
+        <option value="$PROJECT_DIR$/templates/boxme/wide/index-2.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
-    <option name="y" value="174" />
-    <option name="width" value="1223" />
-    <option name="height" value="766" />
+    <option name="x" value="51" />
+    <option name="y" value="23" />
+    <option name="width" value="1870" />
+    <option name="height" value="1059" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -203,6 +206,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="testApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -243,7 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="wide" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,12 +310,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -441,14 +498,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="174" width="1223" height="766" extended-state="0" />
+    <frame x="51" y="23" width="1870" height="1059" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24540901" sideWeight="0.5041051" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15934959" sideWeight="0.5041051" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -480,20 +537,14 @@
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="8" selection-start="91" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="360">
-          <folding>
-            <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
-            <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
-            <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="10" selection-start="96" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="195">
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -507,9 +558,7 @@
     <entry file="file://$PROJECT_DIR$/testProject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="1" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="240">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -536,57 +585,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="4" selection-start="13" selection-end="13" vertical-scroll-proportion="0.025817556" vertical-offset="0" max-vertical-offset="581">
-          <folding />
-        </state>
+        <state line="1" column="4" selection-start="13" selection-end="13" vertical-scroll-proportion="0.025817556" vertical-offset="0" max-vertical-offset="581" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testProject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="46" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="26" selection-start="124" selection-end="124" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="27" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding>
-            <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
-            <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
-            <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testProject/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="16" selection-start="2042" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="859" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/boxme/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="45" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.2757353" vertical-offset="315" max-vertical-offset="1335">
+        <state line="38" column="39" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.43956044" vertical-offset="330" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="7" selection-start="324" selection-end="324" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="34" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/boxme/wide/index-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="20" selection-start="7880" selection-end="7880" vertical-scroll-proportion="-11.0" vertical-offset="1866" max-vertical-offset="9585">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/boxme/wide/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="41" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="9135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="2042" selection-end="2048" vertical-scroll-proportion="0.0" vertical-offset="844" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="32" selection-start="749" selection-end="749" vertical-scroll-proportion="0.49657536" vertical-offset="0" max-vertical-offset="876">
           <folding />
         </state>
       </provider>
