@@ -24,3 +24,12 @@ class Blog(models.Model):
     def __unicode__(self):
         return self.content
 
+class Comment(models.Model):
+    email = models.EmailField()
+    name = models.CharField(max_length = 100)
+    content = models.TextField()
+    blog = models.ForeignKey(Blog)
+
+    def __unicode__(self):
+        return self.blog.title
+
