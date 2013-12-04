@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/models.py" afterPath="$PROJECT_DIR$/testApp/models.py" />
     </list>
     <ignored path="test_project_2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +28,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="48" selection-start="833" selection-end="833" vertical-scroll-proportion="0.51155114" vertical-offset="0" max-vertical-offset="909">
+            <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.51155114" vertical-offset="0" max-vertical-offset="909">
               <folding />
             </state>
           </provider>
@@ -121,11 +121,11 @@
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/testProject/urls.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/testApp/models.py" />
         <option value="$PROJECT_DIR$/testProject/settings.py" />
         <option value="$PROJECT_DIR$/templates/boxme/index.html" />
         <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/templates/boxme/wide/index-2.html" />
+        <option value="$PROJECT_DIR$/testApp/models.py" />
       </list>
     </option>
   </component>
@@ -617,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="48" selection-start="833" selection-end="833" vertical-scroll-proportion="0.51155114" vertical-offset="0" max-vertical-offset="909">
+        <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.51155114" vertical-offset="0" max-vertical-offset="909">
           <folding />
         </state>
       </provider>
