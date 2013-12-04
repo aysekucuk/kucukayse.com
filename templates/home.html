@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALL BLOGS</title>
+</head>
+<body>
+{% for blog in blogs %}
+    <div class="blog_div">
+        <h2>{{blog.title}}</h2>
+        <span>{{blog.date}}</span>
+        <span>{{blog.content}}</span>
+        <span>{{blog.category.name}}</span>
+    </div>
+{% endfor %}
+<h2> </h2>
+</body>
+</html>
