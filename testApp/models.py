@@ -18,7 +18,7 @@ class Blog(models.Model):
     content = models.TextField()
     date = models.DateTimeField(auto_now_add =True)
     category = models.ForeignKey(Category)
-    tags = models.ManyToMany(Tag)
+    tags = models.ManyToManyField(Tag)
 
 
     def __unicode__(self):

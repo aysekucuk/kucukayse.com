@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -48,6 +47,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
+DATABASE_OPTIONS = {'charset': 'utf8'}
+DEFAULT_CHARSET = 'utf-8'
+
+
 ROOT_URLCONF = 'testProject.urls'
 
 WSGI_APPLICATION = 'testProject.wsgi.application'
@@ -66,7 +70,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-TR'
 
 TIME_ZONE = 'UTC'
 
@@ -75,15 +79,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-print (BASE_DIR)
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+STATICFILES_DIRS= os.path.join(BASE_DIR ,"templates/boxme")
+STATIC_URL = "/boxme/"
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
 
-TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/")
+TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/boxme/wide/")
 
-print (TEMPLATE_DIRS)
+print (STATICFILES_DIRS)

@@ -11,10 +11,10 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <link rel="shortcut icon" href="img/favicon.html" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="{{STATICFILES_DIRS}}css/bootstrap.min.css">
+<link rel="stylesheet" href="{{STATICFILES_DIRS}}css/main.css">
 
-<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="{{STATICFILES_DIRS}}}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -29,13 +29,13 @@
 	<div class="container margint50">
 		<div class="row">
 			<div class="col-lg-6 col-sm-6 pos-center">
-				<img src="img/wide.png" />
+				<img src="{{STATICFILES_DIR}}img/wide.png" />
 				<p class="margint30">
 					<a class="push_button" href="wide/index.html">Wide Version</a>
 				</p>
 			</div>
 			<div class="col-lg-6 col-sm-6 pos-center">
-				<img src="img/boxed.png" />
+				<img src="{{STATICFILES_DIR}}img/boxed.png" />
 				<p class="margint30">
 					<a class="push_button" href="boxed/index.html">Boxed Version</a>
 				</p>
@@ -51,8 +51,8 @@
 <!-- JS FILES -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{STATICFILES_DIRS}}}js/vendor/bootstrap.min.js"></script>
+<script src="{{STATICFILES_DIRS}}}js/main.js"></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function (d, w, c) {

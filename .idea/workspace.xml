@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/boxme/index.html" afterPath="$PROJECT_DIR$/templates/boxme/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/models.py" afterPath="$PROJECT_DIR$/testApp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testProject/settings.py" afterPath="$PROJECT_DIR$/testProject/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testApp/views.py" afterPath="$PROJECT_DIR$/testApp/views.py" />
     </list>
     <ignored path="test_project_2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +28,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="0.5421687" vertical-offset="0" max-vertical-offset="615">
+            <state line="24" column="27" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+              <folding>
+                <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
+                <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
+                <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/boxme/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="45" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.2757353" vertical-offset="315" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
@@ -37,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="18" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+            <state line="7" column="32" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -68,7 +84,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="1425">
+            <state line="84" column="16" selection-start="2042" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="859" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
@@ -102,18 +118,19 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/testApp/admin.py" />
-        <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/testProject/urls.py" />
-        <option value="$PROJECT_DIR$/testProject/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/testApp/models.py" />
+        <option value="$PROJECT_DIR$/testProject/settings.py" />
+        <option value="$PROJECT_DIR$/templates/boxme/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="312" />
-    <option name="y" value="198" />
+    <option name="x" value="74" />
+    <option name="y" value="174" />
     <option name="width" value="1223" />
     <option name="height" value="766" />
   </component>
@@ -187,6 +204,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boxme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_project_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boxme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,14 +441,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="312" y="198" width="1223" height="766" extended-state="0" />
+    <frame x="74" y="174" width="1223" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958263" sideWeight="0.5041051" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24540901" sideWeight="0.5041051" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -415,13 +472,19 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="8" selection-start="91" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="360">
-          <folding />
+          <folding>
+            <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
+            <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
+            <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -471,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testProject/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="50" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="4" selection-start="13" selection-end="13" vertical-scroll-proportion="0.025817556" vertical-offset="0" max-vertical-offset="581">
@@ -503,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+        <state line="7" column="32" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -512,7 +568,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="0.5421687" vertical-offset="0" max-vertical-offset="615">
+        <state line="24" column="27" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <folding>
+            <marker date="1386159090614" expanded="true" signature="211:310" placeholder="..." />
+            <marker date="1386159090614" expanded="true" signature="638:843" placeholder="..." />
+            <marker date="1386159090614" expanded="true" signature="812:843" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="16" selection-start="2042" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="859" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/boxme/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="45" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.2757353" vertical-offset="315" max-vertical-offset="1335">
           <folding />
         </state>
       </provider>
