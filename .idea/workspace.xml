@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="" />
+    <list default="true" id="3c38b7bd-a2c4-475d-a66e-7629a1330f51" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testProject/urls.py" afterPath="$PROJECT_DIR$/testProject/urls.py" />
+    </list>
     <ignored path="test_project_2.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +25,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.5888325" vertical-offset="233" max-vertical-offset="630">
+            <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="630">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testProject/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.30456853" vertical-offset="0" max-vertical-offset="394">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,13 +65,13 @@
       <list>
         <option value="$PROJECT_DIR$/testApp/admin.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/testProject/urls.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/testProject/settings.py" />
         <option value="$PROJECT_DIR$/templates/boxme/index.html" />
         <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/templates/boxme/wide/index-2.html" />
         <option value="$PROJECT_DIR$/testApp/models.py" />
+        <option value="$PROJECT_DIR$/testProject/urls.py" />
       </list>
     </option>
   </component>
@@ -427,7 +440,9 @@
     <entry file="file://$PROJECT_DIR$/testProject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="1" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="240">
-          <folding />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -478,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testProject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="297" selection-end="297" vertical-scroll-proportion="0.30226701" vertical-offset="0" max-vertical-offset="397">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="7" selection-start="324" selection-end="324" vertical-scroll-proportion="0.64343166" vertical-offset="0" max-vertical-offset="373">
@@ -508,8 +516,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.5888325" vertical-offset="233" max-vertical-offset="630">
+        <state line="31" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="630">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testProject/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.30456853" vertical-offset="0" max-vertical-offset="394">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
