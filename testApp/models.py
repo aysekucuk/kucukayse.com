@@ -7,11 +7,19 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+class Tag(models.Model):
+    name = models.CharField(max_length = 255)
+
+    def __unicode__(self):
+        return self.name
+
 class Blog(models.Model):
     title = models.CharField(max_length = 255)
     content = models.TextField()
     date = models.DateTimeField(auto_now_add =True)
     category = models.ForeignKey(Category)
+    tags = models.ManyToMany(Tag)
+
 
     def __unicode__(self):
         return self.content
