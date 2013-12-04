@@ -1,6 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+class MainMenu(models.Model):
+    name = models.CharField(max_length=100)
+    parent = models.ForeignKey("self", blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
 class Category(models.Model):
     name = models.CharField(max_length = 100)
 
@@ -19,6 +27,7 @@ class Blog(models.Model):
     date = models.DateTimeField(auto_now_add =True)
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag)
+    menu = models.ForeignKey(MainMenu)
 
 
     def __unicode__(self):
