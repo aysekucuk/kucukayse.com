@@ -29,6 +29,7 @@ class Comment(models.Model):
     name = models.CharField(max_length = 100)
     content = models.TextField()
     blog = models.ForeignKey(Blog)
+    status = models.SmallIntegerField(default=0)
 
     def __unicode__(self):
         return self.blog.title
