@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -10,11 +11,11 @@
 <title>BoxMe Responsive Multipurpose Template</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="shortcut icon" href="img/favicon.html" />
-<link rel="stylesheet" href="{{STATICFILES_DIRS}}css/bootstrap.min.css">
-<link rel="stylesheet" href="{{STATICFILES_DIRS}}css/main.css">
+<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.html" />
+<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
 
-<script src="{{STATICFILES_DIRS}}}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="{{STATIC_URL}}}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -29,13 +30,13 @@
 	<div class="container margint50">
 		<div class="row">
 			<div class="col-lg-6 col-sm-6 pos-center">
-				<img src="{{STATICFILES_DIR}}img/wide.png" />
+				<img src="{{STATIC_URL}}img/wide.png" />
 				<p class="margint30">
 					<a class="push_button" href="wide/index.html">Wide Version</a>
 				</p>
 			</div>
 			<div class="col-lg-6 col-sm-6 pos-center">
-				<img src="{{STATICFILES_DIR}}img/boxed.png" />
+				<img src="{{STATIC_URL}}img/boxed.png" />
 				<p class="margint30">
 					<a class="push_button" href="boxed/index.html">Boxed Version</a>
 				</p>
