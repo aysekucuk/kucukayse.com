@@ -1,3 +1,4 @@
+{% load menu %}
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -49,103 +50,7 @@
 </div>
 <div id="wrapper">
   <!-- HEADER -->
-  <header>
-    <div id="inside-header" class="style2">
-      <div class="container">
-        <div class="header-wrapper">
-          <div class="pull-left logo"><a href="index-2.html"><img src="{{STATIC_URL}}img/inside-logo.png" class="{{STATIC_URL}}img-responsive" alt="BoxMe!" /></a></div>
-          <div class="pull-right menu">
-            <nav class="pull-left menu-bar" id="responsive-menu">
-              <ul class="site-menu" id="site-menu">
-                <li><a class="active" href="#">Home</a>
-                  <ul>
-                    <li><a href="index-2.html">Home 01</a></li>
-                    <li><a href="index-02.html">Home 02</a></li>
-                    <li><a href="index-03.html">Home 03</a></li>
-                    <li><a href="index-animated.html">Home Animated</a></li>
-                    <li><a href="index-parallax.html">Home Parallax</a></li>
-                    <li><a href="index-background-menu.html">Home Menu with Background</a></li>
-                    <li><a href="index-blog.html">Home Blog</a></li>
-                    <li><a href="index-portfolio-without-slider.html">Home Portfolio</a></li>
-                    <li><a href="index-portfolio-with-slider.html">Home Portfolio with Slider</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Headers</a>
-                  <ul>
-                    <li><a href="index-2.html">Header 1</a></li>
-                    <li><a href="index-header-style2.html">Header 2</a></li>
-                    <li><a href="index-header-social.html">Header 3</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Sliders</a>
-                  <ul>
-                    <li><a href="index-2.html">Revolution Slider</a></li>
-                    <li><a href="index-camera-slider.html">Camera Slider</a></li>
-                    <li><a href="index-nivo-slider.html">Nivo Slider</a></li>
-                    <li><a href="index-flex-slider.html">Flex Slider</a></li>
-                    <li><a href="index-elastic-slider.html">Elastic Slider</a></li>
-                    <li><a href="index-accordion-slider.html">Accordion Slider</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Pages</a>
-                  <ul>
-                    <li><a href="shortcodes.html">Shortcodes</a></li>
-                    <li><a href="#">Breadcrumb Navigation</a>
-                      <ul>
-                        <li><a href="full-width-page.html">Standart</a></li>
-                        <li><a href="parallax-breadcrumb-navigation.html">Parallax</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="about-02.html">About 2</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="left-sidebar-page.html">Left Sidebar Page</a></li>
-                    <li><a href="right-sidebar-page.html">Right Sidebar Page</a></li>
-                    <li><a href="full-width-page.html">Full Width Page</a></li>
-                    <li><a href="team-styles.html">Team Styles</a></li>
-                    <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                    <li><a href="search-results.html">Search Results</a></li>
-                    <li><a href="side-navigation.html">Side Navigation</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="404.html">404 Page</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Portfolio</a>
-                  <ul>
-                    <li><a href="portfolio-2-columns.html">Portfolio 2 Columns</a></li>
-                    <li><a href="portfolio-3-columns.html">Portfolio 3 Columns</a></li>
-                    <li><a href="portfolio-4-columns.html">Portfolio 4 Columns</a></li>
-                    <li><a href="portfolio-single.html">Portfolio Details Page</a></li>
-                    <li><a href="portfolio-2-columns-with-sidebar.html">Portfolio 2 Columns with Sidebar</a></li>
-                    <li><a href="portfolio-3-columns-with-sidebar.html">Portfolio 3 Columns with Sidebar</a></li>
-                    <li><a href="portfolio-4-columns-with-sidebar.html">Portfolio 4 Columns with Sidebar</a></li>
-                    <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Blog</a>
-                  <ul>
-                    <li><a href="blog-with-slider.html">Blog with Slider</a></li>
-                    <li><a href="blog-list-left-sidebar.html">Blog with Left Sidebar</a></li>
-                    <li><a href="blog-list-right-sidebar.html">Blog with Right Sidebar</a></li>
-                    <li><a href="blog-columns-sidebar.html">Blog 2 Columns with Sidebar</a></li>
-                    <li><a href="blog-large-sidebar.html">Blog Large Posts with Sidebar</a></li>
-                    <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                    <li><a href="blog-post.html">Blog Post Page</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
-            <div class="pull-right search">
-              <div class="pull-left search-box">
-                <input type="text" name="search" />
-              </div>
-              <a class="pull-right" href="#"><i class="icon-search"></i></a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+{% block header %} {% menu %}{% endblock %}
   <!-- NAVIGATION -->
   <div id="breadcrumb">
     <div class="container">

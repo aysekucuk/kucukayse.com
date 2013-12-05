@@ -1,16 +1,30 @@
+#-*- coding:utf-8 -*-
 from django.db import models
-
+from django.template.defaultfilters import slugify
 # Create your models here.
 
 class MainMenu(models.Model):
     name = models.CharField(max_length=100)
     parent = models.ForeignKey("self", blank=True, null=True)
+    status = models.BooleanField(default = True)
+    slug = models.SlugField(max_length = 200, blank=True ,null = True)
+
+
+    def save(self):
+        self.slug = slugify(self.name.upper())
+        super(MainMenu, self).save()
 
     def __unicode__(self):
         return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length = 100)
+    slug = models.SlugField(max_length = 100, blank=True,null = True)
+
+
+    def save(self):
+        self.slug = slugify(self.name.upper())
+        super(Category, self).save()
 
     def __unicode__(self):
         return self.name
