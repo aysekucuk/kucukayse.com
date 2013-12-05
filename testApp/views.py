@@ -5,4 +5,4 @@ from testApp.models import *
 def contents(request):
     blogs = Blog.objects.all()
 
-    return render(request,"index-2.html",{"blogs":blogs})
+    return render(request,"blog-list-right-sidebar.html",{"blogs":blogs})
