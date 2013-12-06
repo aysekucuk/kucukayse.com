@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'testApp'
+    'testApp',
+    'south'
 
 )
 
@@ -87,7 +88,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = "/static/"
-
+MEDIA_ROOT =BASE_DIR
+MEDIA_URL = "/media/"
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
 
 TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/boxme/wide/")

@@ -62,3 +62,45 @@ class Comment(models.Model):
     def __unicode__(self):
         return self.blog.title
 
+class Album(models.Model):
+    
+    name = models.CharField(max_length=30)
+    status = models.BooleanField(default='True')
+    coverimage = models.ForeignKey('Media', blank=True, null=True, related_name='cover')
+    slug = models.SlugField(max_length=200, null=True, blank=True)
+
+    def __unicode__(self):
+        return self.name    
+
+
+
+class Media(models.Model):
+
+    name = models.CharField(max_length=30,)
+    file_url = models.URLField(blank=True, null=True,)
+    file = models.FileField(blank=True,null=True,upload_to='gallery')
+    order = models.IntegerField(default=0)
+    album = models.ForeignKey(Album, blank=True, null=True)
+
+    def admin_image(self):
+        print "----",self.file.url
+        if self.file:
+            return '<img style="height:50px; width:50px;" src="%s"/>' % self.file.url
+        elif self.file_url:
+            return '<img style="height:50px; width:50px;" src="%s"/>' % self.file_url
+        else:
+            return ''
+
+    def get_image_url(self):
+        if self.file:
+            return self.file.url
+        elif self.file_url:
+            return self.file_url
+        else:
+            return ''
+
+    admin_image.allow_tags = True
+
+    def __unicode__(self):
+        return self.name    
+
