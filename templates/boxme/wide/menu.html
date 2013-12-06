@@ -10,11 +10,11 @@
             <ul class="site-menu" id="site-menu">
               {% for menu in menus %}
               {% if not menu.parent %}
-              <li><a class="active" href="#">{{menu.name}}</a>  
+              <li><a class="active" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
                 <ul>
                   {% for i in menus %}
                     {% if i.parent == menu %}
-                  <li><a href="index-2.html">{{i.name}}</a></li>
+                  <li><a href="{% url 'page' i.slug %}">{{i.name}}</a></li>
                   {% endif %}
                   {% endfor %}
                 </ul>

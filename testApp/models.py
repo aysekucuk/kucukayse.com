@@ -42,10 +42,15 @@ class Blog(models.Model):
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag)
     menu = models.ForeignKey(MainMenu)
-
+    status = models.BooleanField(default = False)
+    slug = models.SlugField(max_length = 100, blank=True,null = True)
 
     def __unicode__(self):
         return self.content
+
+    def save(self):
+        self.slug = slugify(self.title.upper())
+        super(Blog, self).save()
 
 class Comment(models.Model):
     email = models.EmailField()

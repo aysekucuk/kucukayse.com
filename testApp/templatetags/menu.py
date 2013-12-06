@@ -6,6 +6,7 @@ register = template.Library()
 
 @register.inclusion_tag('menu.html', takes_context=True)
 def menu(context):
+	request = context['request']
 	try:
 		menus = MainMenu.objects.filter(status=True)
 		print menus
