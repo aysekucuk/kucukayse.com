@@ -44,6 +44,7 @@ class Blog(models.Model):
     menu = models.ForeignKey(MainMenu)
     status = models.BooleanField(default = False)
     slug = models.SlugField(max_length = 100, blank=True,null = True)
+    photo = models.ForeignKey('testApp.Media',blank=True,null=True)
 
     def __unicode__(self):
         return self.content
@@ -83,7 +84,6 @@ class Media(models.Model):
     album = models.ForeignKey(Album, blank=True, null=True)
 
     def admin_image(self):
-        print "----",self.file.url
         if self.file:
             return '<img style="height:50px; width:50px;" src="%s"/>' % self.file.url
         elif self.file_url:

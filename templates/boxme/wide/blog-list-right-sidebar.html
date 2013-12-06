@@ -1,44 +1,50 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% load sidebar %}
 {% block main %}
-  <div class="container margint40 marginb40">
-    <div class="row">
-      <!-- BLOG -->
-      <div class="col-lg-9 col-sm-9">
-        {{posts.0.title}}
-        {% for post in posts %}
-        <div class="row blog-box">
-          <div class="col-lg-4 col-sm-4 blg-lst-img">
-            <div class="blg-img-box"><img src="{{STATIC_URL}}temp/blg1.jpg" class="img-responsive" alt="" /><span class="blog-list-icon"><i class="icon-play"></i></span>
-              <div class="mask">
-                <div class="prt-lnk-wrppr clearfix">
-                  <div class="pull-left popup"><a href="{{STATIC_URL}}temp/blg1.jpg" class="prettyPhoto"><i class="icon-search"></i></a></div>
-                  <div class="pull-left extlink"><a href="{% url 'detail' post.slug %}"><i class="icon-link"></i></a></div>
-                </div>
+<div class="container margint40 marginb40">
+  <div class="row">
+    <!-- BLOG -->
+    <div class="col-lg-9 col-sm-9">
+      {{posts.0.title}}
+      {% for post in posts %}
+      <div class="row blog-box">
+        <div class="col-lg-4 col-sm-4 blg-lst-img">
+          <div class="blg-img-box">
+          {% thumbnail post.photo "100x150" crop="center" as im %}
+          <img alt="" src="{{im.url}}">
+          {% endthumbnail %}
+          {% comment %}
+            <img src="{{STATIC_URL}}temp/blg1.jpg" class="img-responsive" alt="" />
+            {% endcomment %}
+            <div class="mask">
+              <div class="prt-lnk-wrppr clearfix">
+                <div class="pull-left popup"><a href="{{STATIC_URL}}temp/blg1.jpg" class="prettyPhoto"><i class="icon-search"></i></a></div>
+                <div class="pull-left extlink"><a href="{% url 'detail' post.slug %}"><i class="icon-link"></i></a></div>
               </div>
             </div>
           </div>
-          <div class="col-lg-8 col-sm-8 blg-lst-txt">
-            <div class="blog-infobox clearfix">
-              <div class="pull-left">
-                <div class="blog-date-box">
-                  <p class="blog-date-day">23</p>
-                  <p class="blog-date-month">Sep</p>
-                </div>
-              </div>
-              <div class="pull-left blog-info">
-                <h3 class="marginb10">{{post.title}}</h3>
-                <span class="pull-left"></a></span><span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
-            </div>
-            <p class="margint20">{{post.content|slice:":100"}}</p>
-            <a href="#">READ MORE <i class="icon-long-arrow-right"></i></a></div>
         </div>
-        {% endfor %}
+        <div class="col-lg-8 col-sm-8 blg-lst-txt">
+          <div class="blog-infobox clearfix">
+            <div class="pull-left">
+              <div class="blog-date-box">
+                <p class="blog-date-day">23</p>
+                <p class="blog-date-month">Sep</p>
+              </div>
+            </div>
+            <div class="pull-left blog-info">
+              <h3 class="marginb10">{{post.title}}</h3>
+              <span class="pull-left"></a></span><span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
+          </div>
+          <p class="margint20">{{post.content|slice:":100"}}</p>
+          <a href="#">READ MORE <i class="icon-long-arrow-right"></i></a></div>
       </div>
-      <!-- SIDEBAR -->
-    {% sidebar %}
+      {% endfor %}
     </div>
+    <!-- SIDEBAR -->
+  {% sidebar %}
   </div>
-  <!-- FOOTER -->
-  {% endblock %}
- 
+</div>
+<!-- FOOTER -->
+{% endblock %}
