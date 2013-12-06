@@ -1,3 +1,9 @@
-*.sqlite3
+db.sqlite3
 *.pyc
 .idea
+
+test_project_2/gallery/
+
+._*
+.DS_Store
+*~
