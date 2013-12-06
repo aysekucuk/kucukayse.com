@@ -12,7 +12,7 @@
         <div class="col-lg-4 col-sm-4 blg-lst-img">
           <div class="blg-img-box">
           {% thumbnail post.photo "100x150" crop="center" as im %}
-          <img alt="" src="{{im.url}}">
+          <img alt="" src="{{im.url}}" class="img-responsive">
           {% endthumbnail %}
           {% comment %}
             <img src="{{STATIC_URL}}temp/blg1.jpg" class="img-responsive" alt="" />
@@ -38,7 +38,7 @@
               <span class="pull-left"></a></span><span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
           </div>
           <p class="margint20">{{post.content|slice:":100"}}</p>
-          <a href="#">READ MORE <i class="icon-long-arrow-right"></i></a></div>
+          <a href="{% url 'detail' post.slug %}">READ MORE <i class="icon-long-arrow-right"></i></a></div>
       </div>
       {% endfor %}
     </div>
