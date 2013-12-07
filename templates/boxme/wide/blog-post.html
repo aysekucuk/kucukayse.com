@@ -7,9 +7,6 @@
     <!-- BLOG POST -->
     <div class="col-lg-9 col-sm-9">
       <div class="blog-post">
-        {% comment %}
-        <div class="blg-img-box"><img src="{{STATIC_URL}}temp/blglrg1.jpg" class="img-responsive" alt="" /><span class="blog-list-icon"><i class="icon-play"></i></span></div>
-        {% endcomment %}
         <div class="blog-infobox margint30 clearfix">
           <div class="pull-left">
             <div class="blog-date-box">
@@ -22,46 +19,36 @@
             <span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
         </div>
         <div class="blog-post-pad">
-          <div class="drpcp"><img src="{{STATIC_URL}}temp/leftimg.jpg" class="img-responsive drpcp-img" align="left" alt="">{{post_detail.content}}</div>
+          <div class="drpcp">
+          {% thumbnail post_detail.photo.file "250x200" crop="center" as im %}
+           <img alt="" src="{{im.url}}"class="img-responsive drpcp-img" align="left">
+            {% endthumbnail %}
+            {{post_detail.content}}
+          </div>
           <div class="post-tag-area margint30 clearfix">
             <p class="pull-left">Tags :</p>
             <ul class="pull-left blog-post-tag">
-              <li><a href="#">This</a></li>
-              <li><a href="#">What</a></li>
-              <li><a href="#">Project</a></li>
-              <li><a href="#">That</a></li>
+              {% for tag in post_detail.tags.all %}
+              <li><a href="#">{{tag.name}}</a></li>
+              {% endfor %}
             </ul>
           </div>
           <div class="blog-comment-title">
             <p>
-            <h3>3 Comments on "Articles Page Name"</h3>
+            <h3>Bu makale için {{comments.count}} Yorum yapıldı.</h3>
             </p>
           </div>
           <div class="comment-box">
+            {% for comment in comments %}
             <div class="main-comment clearfix">
               <div class="col-lg-2"><img src="{{STATIC_URL}}temp/team2.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
               <div class="col-lg-10">
-                <h4>Jess Doe</h4>
-                <p class="margint10 com-date">23 September 2013</p>
-                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
+                <h4>{{comment.name}}</h4>
+                <p class="margint10 com-date">{{comments.date}}</p>
+                <p class="margint10">{{comment.content}}</p>
               </div>
             </div>
-            <div class="main-comment clearfix">
-              <div class="col-lg-2"><img src="{{STATIC_URL}}temp/team3.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
-              <div class="col-lg-10">
-                <h4>Jake Doe</h4>
-                <p class="margint10 com-date">23 September 2013</p>
-                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
-              </div>
-            </div>
-            <div class="inner-comment clearfix">
-              <div class="col-lg-2"><img src="{{STATIC_URL}}temp/team1.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
-              <div class="col-lg-10">
-                <h4>Jess Doe</h4>
-                <p class="margint10 com-date">23 September 2013</p>
-                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
-              </div>
-            </div>
+            {% endfor %}
             <div class="blog-comment-title">
               <p>
               <h3>Leave a Reply</h3>

@@ -58,6 +58,7 @@ class Comment(models.Model):
     content = models.TextField()
     blog = models.ForeignKey(Blog)
     status = models.BooleanField(default=False)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return self.blog.title

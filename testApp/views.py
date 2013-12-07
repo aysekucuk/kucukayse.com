@@ -14,6 +14,7 @@ def pages(request,slug=None):
 	return render(request, 'blog-list-right-sidebar.html', {'posts':posts})
 
 def post_detail(request,slug=None):
-	post_detail = get_object_or_404(Blog, slug=slug)
-	return render(request, 'blog-post.html', {'post_detail' : post_detail})	
+	post_detail = get_object_or_404(Blog, slug=slug) #slug'a göre postu çekiyor
+	comments = Comment.objects.select_related('blog').filter(blog=post_detail) # select_related select blog from gibi blog fieldını alıyor sadece böylece daha az sorgu daha hızlı filter da sql de ki where gibi
+	return render(request, 'blog-post.html', {'post_detail' : post_detail , 'comments':comments})	
 

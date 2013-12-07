@@ -6,13 +6,11 @@
   <div class="row">
     <!-- BLOG -->
     <div class="col-lg-9 col-sm-9">
-      {{posts.0.title}}
       {% for post in posts %}
       <div class="row blog-box">
         <div class="col-lg-4 col-sm-4 blg-lst-img">
           <div class="blg-img-box">
-            {{post.photo.file}}
-          {% thumbnail post.photo.file "100x150" crop="center" as im %}
+          {% thumbnail post.photo.file "250x200" crop="center" as im %}
           <img alt="" src="{{im.url}}" class="img-responsive">
           {% endthumbnail %}
           {% comment %}
@@ -38,7 +36,7 @@
               <a href="{% url 'detail' post.slug %}"> <h3 class="marginb10">{{post.title}}</h3></a>
               <span class="pull-left"></span><span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
           </div>
-          <p class="margint20">{{post.content|slice:":100"}}</p>
+          <p class="margint20">{{post.content|slice:":400"}}</p>
           <a href="{% url 'detail' post.slug %}">READ MORE <i class="icon-long-arrow-right"></i></a></div>
       </div>
       {% endfor %}
