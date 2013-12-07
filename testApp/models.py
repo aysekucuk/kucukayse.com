@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
-# Create your models here.
 
 class MainMenu(models.Model):
     name = models.CharField(max_length=100)
