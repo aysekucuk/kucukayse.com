@@ -1,84 +1,53 @@
 {% load static %}
+{% load thumbnail %}
 <div class="col-lg-3 col-sm-3 sidebar">
       <div class="category-box">
-        <h3>Categories</h3>
+        <h3>Kategoriler</h3>
         <hr class="sidebar-underline">
         <ul class="sidebar-category">
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">Technology</a></li>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Lifestyle</a></li>
+          {% for category in categories %}
+          <li><a href="#">{{category.name}}</a></li>
+         {% endfor %}
         </ul>
       </div>
       <div class="sidebar-recent-box margint20">
-        <h3>Recent Post</h3>
+        <h3>Son Yazılar</h3>
         <hr class="sidebar-underline">
         <ul class="sidebar-recent">
+        {% for recent in recents %}
           <li class="clearfix">
-            <div class="pull-left blg-img"><img src="{% get_static_prefix %}temp/blgp1.jpg" alt="" /><span class="sidebar-blg-cmmnt">10</span></div>
+          <div class="pull-left blg-img">
+          {% thumbnail recent.photo.file "70x50" crop="center" as im %}
+          <img alt="" src="{{im.url}}">
+          {% endthumbnail %}
+          </div>
             <div class="pull-left blg-txt">
-              <p><a href="#">The new media post icon next week</a></p>
-              <div class="sidebar-blg-date">24 October 2013</div>
+              <p><a href="#">{{recent.title}}</a></p>
+              <div class="sidebar-blg-date">{{recent.date}}</div>
             </div>
           </li>
-          <li class="clearfix">
-            <div class="pull-left blg-img"><img src="{% get_static_prefix %}temp/blgp2.jpg" alt="" /><span class="sidebar-blg-cmmnt">5</span></div>
-            <div class="pull-left blg-txt">
-              <p><a href="#">The new media post icon next week</a></p>
-              <div class="sidebar-blg-date">13 October 2013</div>
-            </div>
-          </li>
-          <li class="clearfix">
-            <div class="pull-left blg-img"><img src="{% get_static_prefix %}temp/blgp3.jpg" alt="" /><span class="sidebar-blg-cmmnt">7</span></div>
-            <div class="pull-left blg-txt">
-              <p><a href="#">The new media post icon next week</a></p>
-              <div class="sidebar-blg-date">29 September 2013</div>
-            </div>
-          </li>
+          {% endfor %}
+        
         </ul>
       </div>
       <div class="sidebar-tags margint30 clearfix">
-        <h3>Tags</h3>
+        <h3>Etiketler</h3>
         <hr class="sidebar-underline">
         <ul class="sidebar-tags">
-          <li><a href="#">This</a></li>
-          <li><a href="#">What</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">This</a></li>
-          <li><a href="#">What</a></li>
-          <li><a href="#">This</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">What</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">lorem</a></li>
-          <li><a href="#">BoxMe!</a></li>
-          <li><a href="#">What</a></li>
-          <li><a href="#">This</a></li>
+          {% for tag in tags %}
+          <li><a href="#">{{tag.name}}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="sidebar-archives margint20">
-        <h3>Archives</h3>
+        <h3>Arşiv</h3>
         <hr class="sidebar-underline">
         <ul class="sidebar-category">
-          <li><a href="#">October 2013</a></li>
-          <li><a href="#">September 2013</a></li>
-          <li><a href="#">August 2013</a></li>
-          <li><a href="#">July 2013</a></li>
+        {% for month in list %}
+        <li><a href="{% url 'archive' month.0 %}" title="August 2012">{{month.0}}</a>&nbsp;({{month.1}})
+        </li>
+        {% endfor %}
         </ul>
       </div>
-      <div class="sidebar-archives margint20">
-        <h3>Meta</h3>
-        <hr class="sidebar-underline">
-        <ul class="sidebar-category">
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Entries RSS</a></li>
-          <li><a href="#">Comments RSS</a></li>
-          <li><a href="#">WordPress.org</a></li>
-        </ul>
-      </div>
+     
 </div>

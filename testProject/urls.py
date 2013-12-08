@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 	url(r'^$', 'testApp.views.contents', name='home'),
 	url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
 	url(r'^admin/', include(admin.site.urls)),
+	url(r'^arsiv/(?P<date>[-\d]+)$', 'testApp.views.archive', name='archive'),
 	url(r'^post/(?P<slug>[-\w]+)/$', 'testApp.views.post_detail', name='detail'),
 	url(r'^(?P<slug>[-\w]+)/$', 'testApp.views.pages', name='page'),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

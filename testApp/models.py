@@ -37,7 +37,7 @@ class Tag(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length = 255)
     content = models.TextField()
-    date = models.DateTimeField(auto_now_add =True)
+    date = models.DateTimeField()
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag)
     menu = models.ForeignKey(MainMenu)

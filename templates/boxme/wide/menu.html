@@ -4,13 +4,14 @@
   <div id="inside-header" class="style2">
     <div class="container">
       <div class="header-wrapper">
-        <div class="pull-left logo"><a href="index-2.html"><img src="{% get_static_prefix %}img/inside-logo.png" class="{% get_static_prefix %}img-responsive" alt="BoxMe!" /></a></div>
+        <div class="pull-left logo"><a href="{% url 'home' %}"><img src="{% get_static_prefix %}img/inside-logo.png" class="{% get_static_prefix %}img-responsive" alt="BoxMe!" /></a></div>
         <div class="pull-right menu">
           <nav class="pull-left menu-bar" id="responsive-menu">
             <ul class="site-menu" id="site-menu">
+              <li><a class="active" href="{% url 'home' %}">Ana sayfa</a>  
               {% for menu in menus %}
               {% if not menu.parent %}
-              <li><a class="active" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
+              <li><a class="" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
                 <ul>
                   {% for i in menus %}
                     {% if i.parent == menu %}

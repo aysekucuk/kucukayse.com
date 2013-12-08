@@ -2,11 +2,13 @@
 from django.shortcuts import render,get_object_or_404
 from testApp.models import *
 from django.core.paginator import Paginator
+from datetime import datetime, timedelta
+import calendar
 
-# Create your views here.
+
 def contents(request):
-    blogs = Blog.objects.all()
-    return render(request,"blog-list-right-sidebar.html",{"blogs":blogs})
+    posts = Blog.objects.all().order_by('-date')[0:10]
+    return render(request,"blog-list-right-sidebar.html",{"posts":posts})
 
 def pages(request,slug=None):
 	pages = get_object_or_404(MainMenu, slug = slug)  # Gelen sayfanın slugına göre Menuyu buluyor.
@@ -18,3 +20,10 @@ def post_detail(request,slug=None):
 	comments = Comment.objects.select_related('blog').filter(blog=post_detail) # select_related select blog from gibi blog fieldını alıyor sadece böylece daha az sorgu daha hızlı filter da sql de ki where gibi
 	return render(request, 'blog-post.html', {'post_detail' : post_detail , 'comments':comments})	
 
+def archive(request, date):
+	first = datetime.strptime(date, "%Y-%m-%d")
+	end = first + timedelta(calendar.mdays[first.month])
+	print "--*****-",first,"---",end
+	posts = Blog.objects.filter(date__gte=first, date__lte=end)
+
+	return render(request, "blog-list-right-sidebar.html", {'posts' : posts})
