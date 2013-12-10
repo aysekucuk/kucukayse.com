@@ -25,7 +25,7 @@
     <h3>Son Yazılar</h3>
       <ul class="footer-ul-style1">
       	{% for recent in recents %}
-        <li><a href="#"><i class="icon-star-empty"></i>{{recent.title | slice:"0:50"}}</a></li>
+        <li><a href="{% url 'detail' recent.slug %}"><i class="icon-star-empty"></i>{{recent.title | slice:"0:50"}}</a></li>
         {% endfor %}
       </ul>
      {% comment %}

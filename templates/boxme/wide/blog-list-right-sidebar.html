@@ -34,7 +34,7 @@
             </div>
             <div class="pull-left blog-info">
               <a href="{% url 'detail' post.slug %}"> <h3 class="marginb10">{{post.title}}</h3></a>
-              <span class="pull-left"></span><span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
+              <span class="pull-left"></span><span class="blg-cmmnt"><a href="{% url 'detail' post.slug %}#disqus_thread">Link</a></span></div>
           </div>
           <p class="margint20">{{post.content|slice:":400"}}</p>
           <a href="{% url 'detail' post.slug %}">READ MORE <i class="icon-long-arrow-right"></i></a></div>
