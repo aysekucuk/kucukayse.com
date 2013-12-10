@@ -33,51 +33,9 @@
               {% endfor %}
             </ul>
           </div>
-          <div class="blog-comment-title">
-            <p>
-            <h3>Bu makale için {{comments.count}} yorum yapıldı.</h3>
-            </p>
-          </div>
           <div class="comment-box">
-            {% for comment in comments %}
-            <div class="main-comment clearfix">
-              <div class="col-lg-2"><img src="{{STATIC_URL}}temp/team2.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
-              <div class="col-lg-10">
-                <h4>{{comment.name}}</h4>
-                <p class="margint10 com-date">{{comments.date}}</p>
-                <p class="margint10">{{comment.content}}</p>
-              </div>
-            </div>
-            {% endfor %}
             <div class="blog-comment-title">
-              <p>
-              <h3>Yorum yapınız</h3>
-              <div class="margint10">E-mail adresiniz yayınlanmayacaktır. Tüm alanlar zorunludur</div>
-              </p>
-            </div>
-            <div class="comment-input-area margint30">
-              <div class="form-group clearfix">
-                <div class="pull-left inpt-name">İsim *</div>
-                <div class="pull-left">
-                  <input type="text" name="name" />
-                </div>
-              </div>
-              <div class="form-group margint20 clearfix">
-                <div class="pull-left inpt-name">E-Mail *</div>
-                <div class="pull-left">
-                  <input type="text" name="name" />
-                </div>
-              </div>
-             
-              <div class="form-group margint20">
-                <div>İçerik</div>
-                <div class="margint10">
-                  <textarea type="text" name="name"></textarea>
-                </div>
-              </div>
-              <div class="pull-right margint10">
-                <input class="form-button" type="submit" value="Gönder">
-              </div>
+              <div id="disqus_thread"></div>
             </div>
           </div>
         </div>
