@@ -44,9 +44,10 @@ class Blog(models.Model):
     status = models.BooleanField(default = False)
     slug = models.SlugField(max_length = 100, blank=True,null = True)
     photo = models.ForeignKey('testApp.Media',blank=True,null=True)
+    commment_count = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return self.content
+        return self.title
 
     def save(self):
         self.slug = slugify(self.title.upper())
@@ -62,6 +63,19 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return self.blog.title
+
+    def save(self):
+        try:
+            super(Comment, self).save()
+            self.updateCache()
+
+        except Exception, e:
+            raise e
+
+    def updateCache(self, add=0):
+        self.blog.comment_count = self.blog.comment_set.count()+add
+        self.blog.save()
+
 
 class Album(models.Model):
     

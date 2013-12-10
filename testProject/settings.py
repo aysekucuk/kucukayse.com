@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'testApp',
     'south',
-    'sorl.thumbnail'
+    'sorl.thumbnail',
+    'disqus',
 
 )
 

@@ -9,7 +9,6 @@ def menu(context):
 	request = context['request']
 	try:
 		menus = MainMenu.objects.filter(status=True)
-		print menus
 		return {'menus':menus}
 	except Exception, e:
 		return {}
