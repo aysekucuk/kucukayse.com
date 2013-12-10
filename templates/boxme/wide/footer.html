@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block footer %}
+<div id="footer">
+<div class="container">
+  <div class="row foo margint30 marginb25">
+    <div class="col-lg-3 col-sm-6">
+      <h3>Hakkında</h3>
+      <ul class="footer-ul-style1">
+        Software Engineer at Destek Menkul A.Ş and
+        lover of python
+        Graduated at Karadeniz Technical University
+        from Computer Engineering department
+      </ul>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+      <h3>Etiketler</h3>
+      <ul id="tags" class="clearfix">
+      	{% for tag in tags %}
+        <li><a href="#">{{tag.name}}</a></li>
+        {% endfor %}
+      </ul>
+     
+    </div>
+    <div class="col-lg-3 col-sm-6">
+    <h3>Son Yazılar</h3>
+      <ul class="footer-ul-style1">
+      	{% for recent in recents %}
+        <li><a href="#"><i class="icon-star-empty"></i>{{recent.title | slice:"0:50"}}</a></li>
+        {% endfor %}
+      </ul>
+     {% comment %}
+      <h3>Photo Gallery</h3>
+      <ul id="footer-gallery" class="clearfix">
+        <li><a href="{{STATIC_URL}}temp/portfolio1.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer1.jpg" alt="" /></a></li>
+        <li><a href="{{STATIC_URL}}temp/portfolio2.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer2.jpg" alt="" /></a></li>
+        <li><a href="{{STATIC_URL}}temp/portfolio3.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer3.jpg" alt="" /></a></li>
+        <li><a href="{{STATIC_URL}}temp/portfolio4.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer4.jpg" alt="" /></a></li>
+        <li><a href="{{STATIC_URL}}temp/portfolio5.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer5.jpg" alt="" /></a></li>
+        <li><a href="{{STATIC_URL}}temp/portfolio1.jpg" class="prettyPhoto"><img src="{{STATIC_URL}}temp/footer1.jpg" alt="" /></a></li>
+      </ul>
+     {% endcomment %}
+    </div>
+    <div class="col-lg-3 col-sm-6 footer-contact">
+      <h3>İletişim</h3>
+      <p>info@kucukayse.com<br />
+    </div>
+  </div>
+</div>
+</div>
+<div id="footer-last">
+<div class="container footer-text">
+  <div class="pull-left footer-info">
+    <p>© 2013 Powered by <span class="color-text">Ayşe KÜÇÜK</span></p>
+  </div>
+  <div class="pull-right footer-social">
+    <ul id="social" class="margint20 clearfix">
+      <li><a href="http://www.facebook.com/aysekuck"><i class="icon-facebook"></i></a></li>
+      <li><a href="http://www.twitter.com/hansels_sister"><i class="icon-twitter"></i></a></li>
+      <li><a href="https://plus.google.com/113437009778500290774/about"><i class="icon-google-plus"></i></a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+{% endblock %}
