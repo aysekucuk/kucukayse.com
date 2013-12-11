@@ -8,7 +8,11 @@ import calendar
 
 def contents(request):
     posts = Blog.objects.all().order_by('-date')[0:10]
-    return render(request,"blog-list-right-sidebar.html",{"posts":posts})
+    count=[]
+    for post in posts:
+    	comments = Comment.objects.select_related('blog').filter(blog=post)
+    	count.append(len(comments))
+    return render(request,"blog-list-right-sidebar.html",{"posts":posts,'count':count})
 
 def pages(request,slug=None):
 	pages = get_object_or_404(MainMenu, slug = slug)  # Gelen sayfanın slugına göre Menuyu buluyor.
@@ -23,7 +27,6 @@ def post_detail(request,slug=None):
 def archive(request, date):
 	first = datetime.strptime(date, "%Y-%m-%d")
 	end = first + timedelta(calendar.mdays[first.month])
-	print "--*****-",first,"---",end
 	posts = Blog.objects.filter(date__gte=first, date__lte=end)
 
 	return render(request, "blog-list-right-sidebar.html", {'posts' : posts})
