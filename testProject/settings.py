@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'testApp',
     'south',
-    'sorl.thumbnail',
+    'easy_thumbnails',
     'disqus',
 
 )
@@ -55,7 +55,6 @@ MIDDLEWARE_CLASSES = (
 
 DATABASE_OPTIONS = {'charset': 'utf8'}
 DEFAULT_CHARSET = 'utf-8'
-THUMBNAIL_DEBUG = True
 
 ROOT_URLCONF = 'testProject.urls'
 
@@ -101,6 +100,12 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
 )
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'bigpost': {'size': (250, 200), 'crop': True},
+        'smallpost': {'size':(70,50),'crop':True},
+    },
+}
 
 GRAPPELLI_ADMIN_TITLE = 'hello'
 
