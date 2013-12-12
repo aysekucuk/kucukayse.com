@@ -55,7 +55,7 @@ MIDDLEWARE_CLASSES = (
 
 DATABASE_OPTIONS = {'charset': 'utf8'}
 DEFAULT_CHARSET = 'utf-8'
-
+THUMBNAIL_DEBUG = True
 
 ROOT_URLCONF = 'testProject.urls'
 
