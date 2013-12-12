@@ -17,9 +17,7 @@
         {% for recent in recents %}
           <li class="clearfix">
           <div class="pull-left blg-img">
-          {% thumbnail recent.photo.file "70x50" crop="center" as im %}
-          <img alt="" src="{{im.url}}">
-          {% endthumbnail %}
+          <img src="{{ recent.photo.file|thumbnail_url:'smallpost' }}" alt="" />
           </div>
             <div class="pull-left blg-txt">
               <p><a href="#">{{recent.title}}</a></p>

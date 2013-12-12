@@ -20,9 +20,7 @@
         </div>
         <div class="blog-post-pad">
           <div class="drpcp">
-          {% thumbnail post_detail.photo.file "250x200" crop="center" as im %}
-           <img alt="" src="{{im.url}}"class="img-responsive drpcp-img" align="left">
-            {% endthumbnail %}
+          <img src="{{ post_detail.photo.file |thumbnail_url:'bigpost' }}" alt="" class="img-responsive drpcp-img" align="left"/>
             {{post_detail.content}}
           </div>
           <div class="post-tag-area margint30 clearfix">

@@ -10,18 +10,7 @@
       <div class="row blog-box">
         <div class="col-lg-4 col-sm-4 blg-lst-img">
           <div class="blg-img-box">
-          {% thumbnail post.photo.file "250x200" crop="center" as im %}
-          <img alt="" src="{{im.url}}" class="img-responsive">
-          {% endthumbnail %}
-          {% comment %}
-            <img src="{{STATIC_URL}}temp/blg1.jpg" class="img-responsive" alt="" />
-            {% endcomment %}
-            <div class="mask">
-              <div class="prt-lnk-wrppr clearfix">
-                <div class="pull-left popup"><a href="{{STATIC_URL}}temp/blg1.jpg" class="prettyPhoto"><i class="icon-search"></i></a></div>
-                <div class="pull-left extlink"><a href="{% url 'detail' post.slug %}"><i class="icon-link"></i></a></div>
-              </div>
-            </div>
+          <img src="{{ post.photo.file|thumbnail_url:'bigpost' }}" alt="" class="img-responsive" />
           </div>
         </div>
         <div class="col-lg-8 col-sm-8 blg-lst-txt">
@@ -34,7 +23,7 @@
             </div>
             <div class="pull-left blog-info">
               <a href="{% url 'detail' post.slug %}"> <h3 class="marginb10">{{post.title}}</h3></a>
-              <span class="pull-left"></span><span class="blg-cmmnt"><a href="{% url 'detail' post.slug %}#disqus_thread">Link</a></span></div>
+              <span class="pull-left"></span><span class="blg-cmmnt"><a href="{% url 'detail' post.slug %}#disqus_thread">Yükleniyor..</a></span></div>
           </div>
           <p class="margint20">{{post.content|slice:":400"}}</p>
           <a href="{% url 'detail' post.slug %}">READ MORE <i class="icon-long-arrow-right"></i></a></div>

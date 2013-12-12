@@ -3,7 +3,7 @@ Django settings for testProject project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
-
+yapilacaklar: pagination ve tweetlerin cekimi
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'testApp',
     'south',
-    'sorl.thumbnail',
+    'easy_thumbnails',
     'disqus',
 
 )
@@ -55,7 +55,6 @@ MIDDLEWARE_CLASSES = (
 
 DATABASE_OPTIONS = {'charset': 'utf8'}
 DEFAULT_CHARSET = 'utf-8'
-
 
 ROOT_URLCONF = 'testProject.urls'
 
@@ -101,6 +100,12 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
 )
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'bigpost': {'size': (250, 200), 'crop': True},
+        'smallpost': {'size':(70,50),'crop':True},
+    },
+}
 
 GRAPPELLI_ADMIN_TITLE = 'hello'
 
