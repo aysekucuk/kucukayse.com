@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 	url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^arsiv/(?P<date>[-\d]+)$', 'testApp.views.archive', name='archive'),
+	url(r'^kategori/(?P<slug>[-\w]+)/$', 'testApp.views.category', name='category'),
 	url(r'^post/(?P<slug>[-\w]+)/$', 'testApp.views.post_detail', name='detail'),
 	url(r'^(?P<slug>[-\w]+)/$', 'testApp.views.pages', name='page'),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

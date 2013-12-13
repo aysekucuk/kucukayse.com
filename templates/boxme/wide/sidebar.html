@@ -6,7 +6,7 @@
         <hr class="sidebar-underline">
         <ul class="sidebar-category">
           {% for category in categories %}
-          <li><a href="#">{{category.name}}</a></li>
+          <li><a href="{% url 'category' category.slug %}">{{category.name}}</a></li>
          {% endfor %}
         </ul>
       </div>

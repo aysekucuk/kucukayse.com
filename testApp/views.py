@@ -30,3 +30,11 @@ def archive(request, date):
 	posts = Blog.objects.filter(date__gte=first, date__lte=end)
 
 	return render(request, "blog-list-right-sidebar.html", {'posts' : posts})
+
+def category(request,slug=None):
+	try:
+		posts = Blog.objects.filter(category__slug=slug)[0:10]
+		return render(request,'blog-list-right-sidebar.html',{'posts':posts})
+	except Exception, e:
+		return render(request,'blog-list-right-sidebar.html',{})
+
