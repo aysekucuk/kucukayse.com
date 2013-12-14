@@ -16,7 +16,7 @@
           </div>
           <div class="pull-left blog-info-list">
             <h3 class="marginb10">{{post_detail.title}}</h3>
-            <span class="blg-cmmnt"><a href="#">3 Comments</a></span></div>
+            <span class="blg-cmmnt"><a href="{% url 'detail' post_detail.slug %}#disqus_thread">Yükleniyor..</a></span></div>
         </div>
         <div class="blog-post-pad">
           <div class="drpcp">
@@ -27,7 +27,7 @@
             <p class="pull-left">Tags :</p>
             <ul class="pull-left blog-post-tag">
               {% for tag in post_detail.tags.all %}
-              <li><a href="#">{{tag.name}}</a></li>
+              <li><a href="{% url 'tag' tag.slug %}">{{tag.name}}</a></li>
               {% endfor %}
             </ul>
           </div>

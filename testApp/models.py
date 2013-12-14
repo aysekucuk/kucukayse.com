@@ -30,6 +30,11 @@ class Category(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length = 255)
+    slug = models.SlugField(max_length=255,blank=True,null=True)
+
+    def save(self):
+        self.slug = slugify(self.name.upper())
+        super(Tag, self).save()
 
     def __unicode__(self):
         return self.name

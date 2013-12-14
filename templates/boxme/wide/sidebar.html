@@ -20,7 +20,7 @@
           <img src="{{ recent.photo.file|thumbnail_url:'smallpost' }}" alt="" />
           </div>
             <div class="pull-left blg-txt">
-              <p><a href="#">{{recent.title}}</a></p>
+              <p><a href="{% url 'detail' recent.slug %}">{{recent.title}}</a></p>
               <div class="sidebar-blg-date">{{recent.date}}</div>
             </div>
           </li>
@@ -33,7 +33,7 @@
         <hr class="sidebar-underline">
         <ul class="sidebar-tags">
           {% for tag in tags %}
-          <li><a href="#">{{tag.name}}</a></li>
+          <li><a href="{% url 'tag' tag.slug %}">{{tag.name}}</a></li>
           {% endfor %}
         </ul>
       </div>

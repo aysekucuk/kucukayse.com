@@ -38,3 +38,10 @@ def category(request,slug=None):
 	except Exception, e:
 		return render(request,'blog-list-right-sidebar.html',{})
 
+def tag(request,slug=None):
+	try:
+		posts = Blog.objects.filter(tags__slug=slug)[0:10]
+		return render(request,'blog-list-right-sidebar.html',{'posts':posts})
+	except Exception, e:
+		return render(request,'blog-list-right-sidebar.html',{})
+	
