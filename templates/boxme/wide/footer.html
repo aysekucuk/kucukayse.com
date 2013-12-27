@@ -14,6 +14,9 @@
     <div class="col-lg-3 col-sm-6">
       <h3>Etiketler</h3>
       <ul id="tags" class="clearfix">
+      	{% for tag in tags %}
+        <li><a href="#">{{tag.name}}</a></li>
+        {% endfor %}
       </ul>
      
     </div>
@@ -57,5 +60,4 @@
   </div>
 </div>
 </div>
-
 {% endblock %}

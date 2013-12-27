@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'testProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
+        'NAME': 'hello',
 	'USER': 'root',
 	'PASSWORD':'1',
 	'HOST':'localhost',
@@ -93,7 +93,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = '/var/www/kucukayse.com/testApp/static/'
 MEDIA_ROOT =BASE_DIR
 MEDIA_URL = "/media/"
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
