@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% load sidebar %}
+{% block main %}
+<div class="container margint40 marginb40">
+  <div class="row">
+    <!-- BLOG -->
+    <div class="col-lg-9 col-sm-9">
+      {% for post in posts %}
+      <div class="row blog-box">
+        <div class="col-lg-4 col-sm-4 blg-lst-img">
+          <div class="blg-img-box">
+          <img src="{{ post.photo.file|thumbnail_url:'bigpost' }}" alt="" class="img-responsive" />
+          </div>
+        </div>
+        <div class="col-lg-8 col-sm-8 blg-lst-txt">
+          <div class="blog-infobox clearfix">
+            <div class="pull-left">
+              <div class="blog-date-box">
+                <p class="blog-date-day">{{post.date|date:"j" }}</p>
+                <p class="blog-date-month">{{post.date|date:"M"}}</p>
+              </div>
+            </div>
+            <div class="pull-left blog-info">
+              <a href="{% url 'detail' post.slug %}"> <h3 class="marginb10">{{post.title}}</h3></a>
+              <span class="pull-left"></span><span class="blg-cmmnt"><a href="{% url 'detail' post.slug %}#disqus_thread">Yükleniyor..</a></span></div>
+          </div>
+          <p class="margint20">{{post.content|slice:":400"}}</p>
+          <a href="{% url 'detail' post.slug %}">READ MORE <i class="icon-long-arrow-right"></i></a></div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- SIDEBAR -->
+  {% sidebar %}
+  </div>
+</div>
+<!-- FOOTER -->
+{% endblock %}

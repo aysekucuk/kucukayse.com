@@ -1,0 +1,37 @@
+{% load static %}
+{% block header %}
+<header>
+  <div id="inside-header" class="style2">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="pull-left logo"><a href="{% url 'home' %}"><img src="{% get_static_prefix %}img/inside-logo.png" class="{% get_static_prefix %}img-responsive" alt="BoxMe!" /></a></div>
+        <div class="pull-right menu">
+          <nav class="pull-left menu-bar" id="responsive-menu">
+            <ul class="site-menu" id="site-menu">
+              <li><a class="active" href="{% url 'home' %}">Ana sayfa</a>  
+              {% for menu in menus %}
+              {% if not menu.parent %}
+              <li><a class="" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
+                <ul>
+                  {% for i in menus %}
+                    {% if i.parent == menu %}
+                  <li><a href="{% url 'page' i.slug %}">{{i.name}}</a></li>
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+          <div class="pull-right search">
+            <div class="pull-left search-box">
+              <input type="text" name="search" />
+            </div>
+            <a class="pull-right" href="#"><i class="icon-search"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load static %}
+{% load thumbnail %}
+<div class="col-lg-3 col-sm-3 sidebar">
+      <div class="category-box">
+        <h3>Kategoriler</h3>
+        <hr class="sidebar-underline">
+        <ul class="sidebar-category">
+          {% for category in categories %}
+          <li><a href="{% url 'category' category.slug %}">{{category.name}}</a></li>
+         {% endfor %}
+        </ul>
+      </div>
+      <div class="sidebar-recent-box margint20">
+        <h3>Son Yazılar</h3>
+        <hr class="sidebar-underline">
+        <ul class="sidebar-recent">
+        {% for recent in recents %}
+          <li class="clearfix">
+          <div class="pull-left blg-img">
+          <img src="{{ recent.photo.file|thumbnail_url:'smallpost' }}" alt="" />
+          </div>
+            <div class="pull-left blg-txt">
+              <p><a href="{% url 'detail' recent.slug %}">{{recent.title}}</a></p>
+              <div class="sidebar-blg-date">{{recent.date}}</div>
+            </div>
+          </li>
+          {% endfor %}
+        
+        </ul>
+      </div>
+      <div class="sidebar-tags margint30 clearfix">
+        <h3>Etiketler</h3>
+        <hr class="sidebar-underline">
+        <ul class="sidebar-tags">
+        </ul>
+      </div>
+      <div class="sidebar-archives margint20">
+        <h3>Arşiv</h3>
+        <hr class="sidebar-underline">
+        <ul class="sidebar-category">
+        {% for month in list %}
+        <li><a href="{% url 'archive' month.0 %}" title="August 2012">{{month.0}}</a>&nbsp;({{month.1}})
+        </li>
+        {% endfor %}
+        </ul>
+      </div>
+     
+</div>

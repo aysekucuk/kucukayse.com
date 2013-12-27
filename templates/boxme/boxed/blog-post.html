@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% load sidebar %}
+<div class="container margint40 marginb40">
+  <div class="row">
+    <!-- BLOG POST -->
+    <div class="col-lg-9 col-sm-9">
+      <div class="blog-post">
+        <div class="blg-img-box"><img src="temp/blglrg1.jpg" class="img-responsive" alt="" /><span class="blog-list-icon"><i class="icon-play"></i></span></div>
+        <div class="blog-infobox margint30 clearfix">
+          <div class="pull-left">
+            <div class="blog-date-box">
+              <p class="blog-date-day">23</p>
+              <p class="blog-date-month">Sep</p>
+            </div>
+          </div>
+          <div class="pull-left blog-info-list">
+            <h3 class="marginb10">What do you mean the next high about?</h3>
+            <span class="pull-left">Created by <a href="#">John Doe</a></span><span class="blg-cmmnt"><a href="{% url 'detail' post.slug %}#disqus_thread">Yükleniyor..</a></span></div>
+        </div>
+        <div class="blog-post-pad">
+          <div class="margint30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis a debitis ipsam non voluptas totam quia explicabo ut reprehenderit laudantium hic aliquid dolor cumque nihil officia. Sunt culpa accusantium explicabo molestiae consequatur. Quibusdam amet nobis dolore tempora fuga neque eaque at enim. Tempora ad suscipit odit consequatur obcaecati voluptas maxime nihil est doloremque ratione. Tempora molestiae consequatur quidem voluptate accusamus tenetur quia laboriosam nam explicabo eligendi quam corporis. Dolor praesentium totam unde tempora dicta repellat sapiente nisi suscipit commodi excepturi ipsa nesciunt quidem est illo iste. Nesciunt maiores officia eos aliquid eum doloremque cumque atque voluptatibus molestias voluptates architecto fugiat.</div>
+          <div class="bq-style1 del-border">
+            <div class="blockquote">
+              <div class="marginb25">
+                <div class="bq-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. İste dolor dolores blanditiis officiis voluptas a suscipit consequuntur molestias eligendi accusantium earum eaque itaque fugit odit hic labore inventore ullam quaerat rerum magni numquam voluptates alias facilis exercitationem sit ipsum totam.</p>
+                  <span>Charlie Brown - Account Manager</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="drpcp"><img src="temp/leftimg.jpg" class="img-responsive drpcp-img" align="left" alt="" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi quos tenetur odio assumenda doloremque non porro cumque suscipit dignissimos iste eveniet a vero quia consequatur! Ad natus in delectus rerum cum eaque dicta suscipit reiciendis debitis adipisci mollitia doloribus enim aliquam quisquam est illo pariatur! Voluptate reprehenderit dolorem aspernatur beatae id nesciunt deleniti adipisci quasi quae inventore assumenda quam blanditiis magnam reiciendis soluta velit pariatur esse perspiciatis ut obcaecati quis cupiditate a quisquam dolore ex quo at qui quibusdam deserunt odit? İure saepe totam eius. Corporis atque veniam ab quaerat amet vero repellat libero autem laboriosam earum. Perspiciatis esse explicabo eaque itaque reiciendis deserunt! Tempora perferendis laudantium maxime odit provident similique numquam delectus cum doloremque ea blanditiis labore libero modi suscipit ipsum itaque eum dolores illum voluptates aut! Possimus quo tempora voluptates atque voluptatibus consectetur laborum! Voluptates dicta ea consequatur laboriosam earum nesciunt eveniet enim aperiam in ullam suscipit ab exercitationem nihil aspernatur totam facilis aliquam. Suscipit nesciunt unde laborum dignissimos numquam nulla cumque pariatur repudiandae soluta iusto harum quos blanditiis sint dolor porro incidunt commodi. Quam ab voluptatibus saepe aperiam adipisci! Culpa debitis neque inventore iusto quod sit reprehenderit nemo suscipit veniam consequatur aut ducimus sint necessitatibus quasi omnis veritatis laudantium officiis et tenetur repellendus odio laboriosam cupiditate aspernatur recusandae facilis molestias eius voluptatum. İn tempora eveniet excepturi repellat sint ipsam libero doloremque eos voluptatibus magnam accusantium quibusdam quo numquam dignissimos laborum laboriosam nulla cumque est accusamus ad quis totam fugiat necessitatibus vitae modi debitis reiciendis fuga quaerat quisquam a laudantium consequatur odio veritatis rerum dicta perferendis vero asperiores perspiciatis sed harum. Ut sequi vero harum quam pariatur assumenda sunt minus! Error pariatur eveniet dignissimos? Pariatur odio ipsum maxime dolores minus aspernatur sunt provident inventore nam consequatur reiciendis delectus id magni voluptatum asperiores tempore earum libero. Distinctio ea.</div>
+          <div class="post-tag-area margint30 clearfix">
+            <p class="pull-left">Tags :</p>
+            <ul class="pull-left blog-post-tag">
+              <li><a href="#">This</a></li>
+              <li><a href="#">What</a></li>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">That</a></li>
+            </ul>
+          </div>
+          <div class="post-author-box margint30 clearfix">
+            <div class="col-lg-2 col-sm-2 author-pic"><img src="temp/team4.jpg" class="img-responsive" alt="" /></div>
+            <div class="col-lg-10 col-sm-10 author-info">
+              <p><span>Jane Doe</span> <a href="#">All Articles</a></p>
+              <p class="margint20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veritatis nemo mollitia in quidem eligendi quaerat cum culpa corporis officiis.</p>
+            </div>
+          </div>
+          <div class="blog-comment-title">
+            <p>
+            <h3>3 Comments on "Articles Page Name"</h3>
+            </p>
+          </div>
+          <div class="comment-box">
+            <div class="main-comment clearfix">
+              <div class="col-lg-2"><img src="temp/team2.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
+              <div class="col-lg-10">
+                <h4>Jess Doe</h4>
+                <p class="margint10 com-date">23 September 2013</p>
+                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
+              </div>
+            </div>
+            <div class="main-comment clearfix">
+              <div class="col-lg-2"><img src="temp/team3.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
+              <div class="col-lg-10">
+                <h4>Jake Doe</h4>
+                <p class="margint10 com-date">23 September 2013</p>
+                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
+              </div>
+            </div>
+            <div class="inner-comment clearfix">
+              <div class="col-lg-2"><img src="temp/team1.jpg" class="img-responsive img-circle comment-pic" alt="" /></div>
+              <div class="col-lg-10">
+                <h4>Jess Doe</h4>
+                <p class="margint10 com-date">23 September 2013</p>
+                <p class="margint10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sed facere numquam accusantium ratione neque nulla veniam voluptatem officiis libero eaque expedita dignissimos aliquam alias cupiditate sunt doloribus fugit. Dolores aut consectetur quas quisquam voluptate fugit saepe reiciendis eligendi odio?</p>
+              </div>
+            </div>
+            <div class="blog-comment-title">
+              <p>
+              <h3>Leave a Reply</h3>
+              <div class="margint10">Your email address will not be published. Required fields are marked *</div>
+              </p>
+            </div>
+            <div class="comment-input-area margint30">
+              <div class="form-group clearfix">
+                <div class="pull-left inpt-name">Name *</div>
+                <div class="pull-left">
+                  <input type="text" name="name" />
+                </div>
+              </div>
+              <div class="form-group margint20 clearfix">
+                <div class="pull-left inpt-name">E-Mail *</div>
+                <div class="pull-left">
+                  <input type="text" name="name" />
+                </div>
+              </div>
+              <div class="form-group margint20 clearfix">
+                <div class="pull-left inpt-name">Web Site</div>
+                <div class="pull-left">
+                  <input type="text" name="name" />
+                </div>
+              </div>
+              <div class="form-group margint20">
+                <div>Subject</div>
+                <div class="margint10">
+                  <textarea type="text" name="name"></textarea>
+                </div>
+              </div>
+              <p class="margint20">You may use these HTML tags and attributes: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt;</p>
+              <div class="pull-right margint10">
+                <input class="form-button" type="submit" value="Send">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SIDEBAR -->
+  {% sidebar %}
+  </div>
+</div>

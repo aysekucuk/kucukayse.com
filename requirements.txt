@@ -1,0 +1,5 @@
+Django==1.6
+South==0.8.4
+django-grappelli==2.5.0
+sorl-thumbnail==11.12
+
