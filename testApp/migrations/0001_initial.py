@@ -30,6 +30,7 @@ class Migration(SchemaMigration):
         db.create_table(u'testApp_tag', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=255, null=True, blank=True)),
         ))
         db.send_create_signal(u'testApp', ['Tag'])
 
@@ -43,6 +44,8 @@ class Migration(SchemaMigration):
             ('menu', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['testApp.MainMenu'])),
             ('status', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('slug', self.gf('django.db.models.fields.SlugField')(max_length=100, null=True, blank=True)),
+            ('photo', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['testApp.Media'], null=True, blank=True)),
+            ('commment_count', self.gf('django.db.models.fields.IntegerField')(default=0)),
         ))
         db.send_create_signal(u'testApp', ['Blog'])
 
@@ -63,6 +66,7 @@ class Migration(SchemaMigration):
             ('content', self.gf('django.db.models.fields.TextField')()),
             ('blog', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['testApp.Blog'])),
             ('status', self.gf('django.db.models.fields.BooleanField')(default=False)),
+            ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
         db.send_create_signal(u'testApp', ['Comment'])
 
@@ -126,10 +130,12 @@ class Migration(SchemaMigration):
         u'testApp.blog': {
             'Meta': {'object_name': 'Blog'},
             'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['testApp.Category']"}),
+            'commment_count': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'content': ('django.db.models.fields.TextField', [], {}),
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'menu': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['testApp.MainMenu']"}),
+            'photo': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['testApp.Media']", 'null': 'True', 'blank': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'status': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'tags': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['testApp.Tag']", 'symmetrical': 'False'}),
@@ -145,6 +151,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Comment'},
             'blog': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['testApp.Blog']"}),
             'content': ('django.db.models.fields.TextField', [], {}),
+            'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
@@ -170,7 +177,8 @@ class Migration(SchemaMigration):
         u'testApp.tag': {
             'Meta': {'object_name': 'Tag'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
         }
     }
 
