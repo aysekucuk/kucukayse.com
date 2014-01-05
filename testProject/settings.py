@@ -68,10 +68,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hello',
-	'USER': 'root',
-	'PASSWORD':'1',
-	'HOST':'localhost',
-	'PORT':'',
+    	'USER': 'root',
+    	'PASSWORD':'1',
+    	'HOST':'localhost',
+    	'PORT':'',
     }
 }
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
