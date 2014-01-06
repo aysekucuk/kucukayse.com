@@ -21,8 +21,11 @@ def sidebar(context):
 		months.append(month.get('month'))
 		months.append(month.get('total')) 
 		list.append(months)
+	#{'date': datetime.strptime(i['month'].split()[0], "%Y-%m-%d")
+	#archive = [{'count' : i['total'] } for i in archive if i['month'].split()[0][0:4] == str(datetime.now().year-1)]
+	#archive = [{'count' : (i['month']).strftime("%Y-%m-%d %H:%M:%S'").split("-")[0:4] } for i in archive]
 
-	archive = [{'date': datetime.strptime(i['month'].split()[0], "%Y-%m-%d"), 'count' : i['total'] } for i in archive if i['month'].split()[0][0:4] == str(datetime.now().year-1)]
+	#print "------",archive
 	context['list'] = list
 
 	return context

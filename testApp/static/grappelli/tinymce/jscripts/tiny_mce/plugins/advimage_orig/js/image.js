@@ -9,6 +9,7 @@ var ImageDialog = {
 	},
 
 	init : function(ed) {
+<<<<<<< HEAD
 		var f = document.forms[0], nl = f.elements, ed = tinyMCEPopup.editor, dom = ed.dom, n = ed.selection.getNode();
 
 		tinyMCEPopup.resizeToInnerSize();
@@ -16,6 +17,15 @@ var ImageDialog = {
 		this.fillFileList('src_list', 'tinyMCEImageList');
 		this.fillFileList('over_list', 'tinyMCEImageList');
 		this.fillFileList('out_list', 'tinyMCEImageList');
+=======
+		var f = document.forms[0], nl = f.elements, ed = tinyMCEPopup.editor, dom = ed.dom, n = ed.selection.getNode(), fl = tinyMCEPopup.getParam('external_image_list', 'tinyMCEImageList');
+
+		tinyMCEPopup.resizeToInnerSize();
+		this.fillClassList('class_list');
+		this.fillFileList('src_list', fl);
+		this.fillFileList('over_list', fl);
+		this.fillFileList('out_list', fl);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		TinyMCE_EditableSelects.init();
 
 		if (n.nodeName == 'IMG') {
@@ -171,9 +181,19 @@ var ImageDialog = {
 		if (el && el.nodeName == 'IMG') {
 			ed.dom.setAttribs(el, args);
 		} else {
+<<<<<<< HEAD
 			ed.execCommand('mceInsertContent', false, '<img id="__mce_tmp" />', {skip_undo : 1});
 			ed.dom.setAttribs('__mce_tmp', args);
 			ed.dom.setAttrib('__mce_tmp', 'id', '');
+=======
+			tinymce.each(args, function(value, name) {
+				if (value === "") {
+					delete args[name];
+				}
+			});
+
+			ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			ed.undoManager.add();
 		}
 
@@ -287,7 +307,11 @@ var ImageDialog = {
 	fillFileList : function(id, l) {
 		var dom = tinyMCEPopup.dom, lst = dom.get(id), v, cl;
 
+<<<<<<< HEAD
 		l = window[l];
+=======
+		l = typeof(l) === 'function' ? l() : window[l];
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		lst.options.length = 0;
 
 		if (l && l.length > 0) {
@@ -391,12 +415,23 @@ var ImageDialog = {
 					if (v == '0')
 						img.style.border = isIE ? '0' : '0 none none';
 					else {
+<<<<<<< HEAD
 						if (b.length == 3 && b[isIE ? 2 : 1])
 							bStyle = b[isIE ? 2 : 1];
 						else if (!bStyle || bStyle == 'none')
 							bStyle = 'solid';
 						if (b.length == 3 && b[isIE ? 0 : 2])
 							bColor = b[isIE ? 0 : 2];
+=======
+						var isOldIE = tinymce.isIE && (!document.documentMode || document.documentMode < 9);
+
+						if (b.length == 3 && b[isOldIE ? 2 : 1])
+							bStyle = b[isOldIE ? 2 : 1];
+						else if (!bStyle || bStyle == 'none')
+							bStyle = 'solid';
+						if (b.length == 3 && b[isIE ? 0 : 2])
+							bColor = b[isOldIE ? 0 : 2];
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						else if (!bColor || bColor == 'none')
 							bColor = 'black';
 						img.style.border = v + 'px ' + bStyle + ' ' + bColor;

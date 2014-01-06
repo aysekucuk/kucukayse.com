@@ -66,8 +66,12 @@ WSGI_APPLICATION = 'testProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hello',
+    	'USER': 'root',
+    	'PASSWORD':'1',
+    	'HOST':'localhost',
+    	'PORT':'',
     }
 }
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
@@ -90,7 +94,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 MEDIA_ROOT =BASE_DIR
-MEDIA_URL = "/media/"
+MEDIA_URL = "/"
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
 
 TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/boxme/wide/")

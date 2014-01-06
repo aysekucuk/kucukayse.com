@@ -172,6 +172,7 @@
         
         // INTERNAL: SHOW/HIDE ADVANCED MENU
         _show_adv_menu: function(ed) {
+<<<<<<< HEAD
             ed.controlManager.setActive("grappelli_adv", 1);
             DOM.show(ed.controlManager.get(tb).id);
             this._resizeIframe(ed, tb, -28);
@@ -182,6 +183,22 @@
             DOM.hide(ed.controlManager.get(tb).id);
             this._resizeIframe(ed, tb, 28);
             ed.settings.grappelli_adv_hidden = 1;
+=======
+            if (ed.controlManager.get(tb, false)) {
+                ed.controlManager.setActive("grappelli_adv", 1);
+                DOM.show(ed.controlManager.get(tb).id);
+                this._resizeIframe(ed, tb, -28);
+                ed.settings.grappelli_adv_hidden = 0;
+            }
+        },
+        _hide_adv_menu: function(ed) {
+            if (ed.controlManager.get(tb, false)) {
+                ed.controlManager.setActive("grappelli_adv", 0);
+                DOM.hide(ed.controlManager.get(tb).id);
+                this._resizeIframe(ed, tb, 28);
+                ed.settings.grappelli_adv_hidden = 1;
+            }
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
         },
         
         // GET INFO
@@ -191,7 +208,11 @@
                 author: "vonautomatisch (patrick kranzlmueller)",
                 authorurl: "http://vonautomatisch.at",
                 infourl: "http://code.google.com/p/django-grappelli/",
+<<<<<<< HEAD
                 version: "1.0"
+=======
+                version: "1.1"
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
             }
         }
         

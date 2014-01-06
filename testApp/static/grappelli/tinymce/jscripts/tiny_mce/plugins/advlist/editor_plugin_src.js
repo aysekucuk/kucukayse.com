@@ -41,7 +41,11 @@
 		},
 
 		createControl: function(name, cm) {
+<<<<<<< HEAD
 			var t = this, btn, format;
+=======
+			var t = this, btn, format, editor = t.editor;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			if (name == 'numlist' || name == 'bullist') {
 				// Default to first item if it's a default item
@@ -53,7 +57,11 @@
 
 					each(format.styles, function(value, name) {
 						// Format doesn't match
+<<<<<<< HEAD
 						if (t.editor.dom.getStyle(node, name) != value) {
+=======
+						if (editor.dom.getStyle(node, name) != value) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 							state = false;
 							return false;
 						}
@@ -63,14 +71,22 @@
 				};
 
 				function applyListFormat() {
+<<<<<<< HEAD
 					var list, ed = t.editor, dom = ed.dom, sel = ed.selection;
+=======
+					var list, dom = editor.dom, sel = editor.selection;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 					// Check for existing list element
 					list = dom.getParent(sel.getNode(), 'ol,ul');
 
 					// Switch/add list type if needed
 					if (!list || list.nodeName == (name == 'bullist' ? 'OL' : 'UL') || hasFormat(list, format))
+<<<<<<< HEAD
 						ed.execCommand(name == 'bullist' ? 'InsertUnorderedList' : 'InsertOrderedList');
+=======
+						editor.execCommand(name == 'bullist' ? 'InsertUnorderedList' : 'InsertOrderedList');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 					// Append styles to new list element
 					if (format) {
@@ -80,7 +96,12 @@
 							list.removeAttribute('data-mce-style');
 						}
 					}
+<<<<<<< HEAD
 					ed.focus();
+=======
+
+					editor.focus();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				};
 
 				btn = cm.createSplitButton(name, {
@@ -92,8 +113,20 @@
 				});
 
 				btn.onRenderMenu.add(function(btn, menu) {
+<<<<<<< HEAD
 					menu.onShowMenu.add(function() {
 						var dom = t.editor.dom, list = dom.getParent(t.editor.selection.getNode(), 'ol,ul'), fmtList;
+=======
+					menu.onHideMenu.add(function() {
+						if (t.bookmark) {
+							editor.selection.moveToBookmark(t.bookmark);
+							t.bookmark = 0;
+						}
+					});
+
+					menu.onShowMenu.add(function() {
+						var dom = editor.dom, list = dom.getParent(editor.selection.getNode(), 'ol,ul'), fmtList;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 						if (list || format) {
 							fmtList = t[name];
@@ -123,16 +156,33 @@
 							if (!list)
 								menu.items[format.id].setSelected(1);
 						}
+<<<<<<< HEAD
 					});
 
 					menu.add({id : t.editor.dom.uniqueId(), title : 'advlist.types', 'class' : 'mceMenuItemTitle', titleItem: true}).setDisabled(1);
+=======
+	
+						editor.focus();
+
+						// IE looses it's selection so store it away and restore it later
+						if (tinymce.isIE) {
+							t.bookmark = editor.selection.getBookmark(1);
+						}
+					});
+
+					menu.add({id : editor.dom.uniqueId(), title : 'advlist.types', 'class' : 'mceMenuItemTitle', titleItem: true}).setDisabled(1);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 					each(t[name], function(item) {
 						// IE<8 doesn't support lower-greek, skip it
 						if (t.isIE7 && item.styles.listStyleType == 'lower-greek')
 							return;
 
+<<<<<<< HEAD
 						item.id = t.editor.dom.uniqueId();
+=======
+						item.id = editor.dom.uniqueId();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 						menu.add({id : item.id, title : item.title, onclick : function() {
 							format = item;

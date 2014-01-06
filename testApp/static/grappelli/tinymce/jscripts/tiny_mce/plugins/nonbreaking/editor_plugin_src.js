@@ -25,11 +25,20 @@
 
 			if (ed.getParam('nonbreaking_force_tab')) {
 				ed.onKeyDown.add(function(ed, e) {
+<<<<<<< HEAD
 					if (tinymce.isIE && e.keyCode == 9) {
 						ed.execCommand('mceNonBreaking');
 						ed.execCommand('mceNonBreaking');
 						ed.execCommand('mceNonBreaking');
 						tinymce.dom.Event.cancel(e);
+=======
+					if (e.keyCode == 9) {
+						e.preventDefault();
+	
+						ed.execCommand('mceNonBreaking');
+						ed.execCommand('mceNonBreaking');
+						ed.execCommand('mceNonBreaking');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					}
 				});
 			}

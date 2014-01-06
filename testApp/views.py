@@ -7,16 +7,18 @@ import calendar
 
 
 def contents(request):
-    posts = Blog.objects.all().order_by('-date')[0:10]
-    count=[]
-    for post in posts:
-    	comments = Comment.objects.select_related('blog').filter(blog=post)
-    	count.append(len(comments))
-    return render(request,"blog-list-right-sidebar.html",{"posts":posts,'count':count})
+	try:
+		posts = Blog.objects.all().order_by('-date')[0:10]
+	except Exception, e:
+		posts = []
+	return render(request,"blog-list-right-sidebar.html",{"posts":posts,})
 
 def pages(request,slug=None):
-	pages = get_object_or_404(MainMenu, slug = slug)  # Gelen sayfanın slugına göre Menuyu buluyor.
-	posts = pages.blog_set.filter(status=True) # o menuye ait blog yazılarını çekiyor posts listesine atıyor
+	try:
+		pages = get_object_or_404(MainMenu, slug = slug)  # Gelen sayfanın slugına göre Menuyu buluyor.
+		posts = pages.blog_set.filter(status=True) # o menuye ait blog yazılarını çekiyor posts listesine atıyor
+	except Exception, e:
+		posts = []
 	return render(request, 'blog-list-right-sidebar.html', {'posts':posts})
 
 def post_detail(request,slug=None):

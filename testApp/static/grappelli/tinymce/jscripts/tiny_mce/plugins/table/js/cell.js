@@ -63,6 +63,14 @@ function init() {
 function updateAction() {
 	var el, inst = ed, tdElm, trElm, tableElm, formObj = document.forms[0];
 
+<<<<<<< HEAD
+=======
+	if (!AutoValidator.validate(formObj)) {
+		tinyMCEPopup.alert(AutoValidator.getErrorMessages(formObj).join('. ') + '.');
+		return false;
+	}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	tinyMCEPopup.restoreSelection();
 	el = ed.selection.getStart();
 	tdElm = ed.dom.getParent(el, "td,th");
@@ -123,6 +131,39 @@ function updateAction() {
 
 			break;
 
+<<<<<<< HEAD
+=======
+		case "col":
+			var curr, col = 0, cell = trElm.firstChild, rows = tableElm.getElementsByTagName("tr");
+
+			if (cell.nodeName != "TD" && cell.nodeName != "TH")
+				cell = nextCell(cell);
+
+			do {
+				if (cell == tdElm)
+					break;
+				col += cell.getAttribute("colspan")?cell.getAttribute("colspan"):1;
+			} while ((cell = nextCell(cell)) != null);
+
+			for (var i=0; i<rows.length; i++) {
+				cell = rows[i].firstChild;
+
+				if (cell.nodeName != "TD" && cell.nodeName != "TH")
+					cell = nextCell(cell);
+
+				curr = 0;
+				do {
+					if (curr == col) {
+						cell = updateCell(cell, true);
+						break;
+					}
+					curr += cell.getAttribute("colspan")?cell.getAttribute("colspan"):1;
+				} while ((cell = nextCell(cell)) != null);
+			}
+
+			break;
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		case "all":
 			var rows = tableElm.getElementsByTagName("tr");
 

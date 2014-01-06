@@ -23,11 +23,19 @@
 			paste_convert_headers_to_strong : false,
 			paste_dialog_width : "450",
 			paste_dialog_height : "400",
+<<<<<<< HEAD
+=======
+			paste_max_consecutive_linebreaks: 2,
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			paste_text_use_dialog : false,
 			paste_text_sticky : false,
 			paste_text_sticky_default : false,
 			paste_text_notifyalways : false,
+<<<<<<< HEAD
 			paste_text_linebreaktype : "p",
+=======
+			paste_text_linebreaktype : "combined",
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			paste_text_replacements : [
 				[/\u2026/g, "..."],
 				[/[\x93\x94\u201c\u201d]/g, '"'],
@@ -76,7 +84,11 @@
 			// This function executes the process handlers and inserts the contents
 			// force_rich overrides plain text mode set by user, important for pasting with execCommand
 			function process(o, force_rich) {
+<<<<<<< HEAD
 				var dom = ed.dom, rng, nodes;
+=======
+				var dom = ed.dom, rng;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				// Execute pre process handlers
 				t.onPreProcess.dispatch(t, o);
@@ -89,11 +101,17 @@
 				if (tinymce.isGecko) {
 					rng = ed.selection.getRng(true);
 					if (rng.startContainer == rng.endContainer && rng.startContainer.nodeType == 3) {
+<<<<<<< HEAD
 						nodes = dom.select('p,h1,h2,h3,h4,h5,h6,pre', o.node);
 
 						// Is only one block node and it doesn't contain word stuff
 						if (nodes.length == 1 && o.content.indexOf('__MCE_ITEM__') === -1)
 							dom.remove(nodes.reverse(), true);
+=======
+						// Is only one block node and it doesn't contain word stuff
+						if (o.node.childNodes.length === 1 && /^(p|h[1-6]|pre)$/i.test(o.node.firstChild.nodeName) && o.content.indexOf('__MCE_ITEM__') === -1)
+							dom.remove(o.node.firstChild, true);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					}
 				}
 
@@ -101,11 +119,19 @@
 				t.onPostProcess.dispatch(t, o);
 
 				// Serialize content
+<<<<<<< HEAD
 				o.content = ed.serializer.serialize(o.node, {getInner : 1});
 
 				// Plain text option active?
 				if ((!force_rich) && (ed.pasteAsPlainText)) {
 					t._insertPlainText(ed, dom, o.content);
+=======
+				o.content = ed.serializer.serialize(o.node, {getInner : 1, forced_root_block : ''});
+
+				// Plain text option active?
+				if ((!force_rich) && (ed.pasteAsPlainText)) {
+					t._insertPlainText(o.content);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 					if (!getParam(ed, "paste_text_sticky")) {
 						ed.pasteAsPlainText = false;
@@ -132,7 +158,11 @@
 						if (getParam(ed, "paste_text_sticky")) {
 							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
 						} else {
+<<<<<<< HEAD
 							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
+=======
+							ed.windowManager.alert(ed.translate('paste.plaintext_mode'));
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						}
 
 						if (!getParam(ed, "paste_text_notifyalways")) {
@@ -157,7 +187,11 @@
 
 					if (ed.pasteAsPlainText) {
 						e.preventDefault();
+<<<<<<< HEAD
 						process({content : textContent.replace(/\r?\n/g, '<br />')});
+=======
+						process({content : dom.encode(textContent).replace(/\r?\n/g, '<br />')});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						return;
 					}
 				}
@@ -172,6 +206,7 @@
 				if (body != ed.getDoc().body)
 					posY = dom.getPos(ed.selection.getStart(), body).y;
 				else
+<<<<<<< HEAD
 					posY = body.scrollTop + dom.getViewPort().y;
 
 				// Styles needs to be applied after the element is added to the document since WebKit will otherwise remove all styles
@@ -179,6 +214,16 @@
 					position : 'absolute',
 					left : -10000,
 					top : posY,
+=======
+					posY = body.scrollTop + dom.getViewPort(ed.getWin()).y;
+
+				// Styles needs to be applied after the element is added to the document since WebKit will otherwise remove all styles
+				// If also needs to be in view on IE or the paste would fail
+				dom.setStyles(n, {
+					position : 'absolute',
+					left : tinymce.isGecko ? -40 : 0, // Need to move it out of site on Gecko since it will othewise display a ghost resize rect for the div
+					top : posY - 25,
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					width : 1,
 					height : 1,
 					overflow : 'hidden'
@@ -268,8 +313,14 @@
 									h += n.innerHTML;
 							});
 						} else {
+<<<<<<< HEAD
 							// Found WebKit weirdness so force the content into plain text mode
 							h = '<pre>' + dom.encode(textContent).replace(/\r?\n/g, '<br />') + '</pre>';
+=======
+							// Found WebKit weirdness so force the content into paragraphs this seems to happen when you paste plain text from Nodepad etc
+							// So this logic will replace double enter with paragraphs and single enter with br so it kind of looks the same
+							h = '<p>' + dom.encode(textContent).replace(/\r?\n\r?\n/g, '</p><p>').replace(/\r?\n/g, '<br />') + '</p>';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						}
 
 						// Remove the nodes
@@ -359,9 +410,24 @@
 			}
 
 			// IE9 adds BRs before/after block elements when contents is pasted from word or for example another browser
+<<<<<<< HEAD
 			if (tinymce.isIE && document.documentMode >= 9)
 				process([[/(?:<br>&nbsp;[\s\r\n]+|<br>)*(<\/?(h[1-6r]|p|div|address|pre|form|table|tbody|thead|tfoot|th|tr|td|li|ol|ul|caption|blockquote|center|dl|dt|dd|dir|fieldset)[^>]*>)(?:<br>&nbsp;[\s\r\n]+|<br>)*/g, '$1']]);
 
+=======
+			if (tinymce.isIE && document.documentMode >= 9 && /<(h[1-6r]|p|div|address|pre|form|table|tbody|thead|tfoot|th|tr|td|li|ol|ul|caption|blockquote|center|dl|dt|dd|dir|fieldset)/.test(o.content)) {
+				// IE9 adds BRs before/after block elements when contents is pasted from word or for example another browser
+				process([[/(?:<br>&nbsp;[\s\r\n]+|<br>)*(<\/?(h[1-6r]|p|div|address|pre|form|table|tbody|thead|tfoot|th|tr|td|li|ol|ul|caption|blockquote|center|dl|dt|dd|dir|fieldset)[^>]*>)(?:<br>&nbsp;[\s\r\n]+|<br>)*/g, '$1']]);
+
+				// IE9 also adds an extra BR element for each soft-linefeed and it also adds a BR for each word wrap break
+				process([
+					[/<br><br>/g, '<BR><BR>'], // Replace multiple BR elements with uppercase BR to keep them intact
+					[/<br>/g, ' '], // Replace single br elements with space since they are word wrap BR:s
+					[/<BR><BR>/g, '<br>'] // Replace back the double brs but into a single BR
+				]);
+			}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			// Detect Word content and process it more aggressive
 			if (/class="?Mso|style="[^"]*\bmso-|w:WordDocument/i.test(h) || o.wordContent) {
 				o.wordContent = true;			// Mark the pasted contents as word specific content
@@ -747,6 +813,7 @@
 		 * plugin, and requires minimal changes to add the new functionality.
 		 * Speednet - June 2009
 		 */
+<<<<<<< HEAD
 		_insertPlainText : function(ed, dom, h) {
 			var i, len, pos, rpos, node, breakElms, before, after,
 				w = ed.getWin(),
@@ -756,10 +823,18 @@
 				inArray = tinymce.inArray,
 				linebr = getParam(ed, "paste_text_linebreaktype"),
 				rl = getParam(ed, "paste_text_replacements");
+=======
+		_insertPlainText : function(content) {
+			var ed = this.editor,
+				linebr = getParam(ed, "paste_text_linebreaktype"),
+				rl = getParam(ed, "paste_text_replacements"),
+				is = tinymce.is;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			function process(items) {
 				each(items, function(v) {
 					if (v.constructor == RegExp)
+<<<<<<< HEAD
 						h = h.replace(v, "");
 					else
 						h = h.replace(v[0], v[1]);
@@ -769,6 +844,17 @@
 			if ((typeof(h) === "string") && (h.length > 0)) {
 				// If HTML content with line-breaking tags, then remove all cr/lf chars because only tags will break a line
 				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center)[^>]*>/i.test(h)) {
+=======
+						content = content.replace(v, "");
+					else
+						content = content.replace(v[0], v[1]);
+				});
+			};
+
+			if ((typeof(content) === "string") && (content.length > 0)) {
+				// If HTML content with line-breaking tags, then remove all cr/lf chars because only tags will break a line
+				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center)[^>]*>/i.test(content)) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					process([
 						/[\n\r]+/g
 					]);
@@ -785,6 +871,7 @@
 					[/<\/t[dh]>\s*<t[dh][^>]*>/gi, "\t"],		// Table cells get tabs betweem them
 					/<[a-z!\/?][^>]*>/gi,						// Delete all remaining tags
 					[/&nbsp;/gi, " "],							// Convert non-break spaces to regular spaces (remember, *plain text*)
+<<<<<<< HEAD
 					[/(?:(?!\n)\s)*(\n+)(?:(?!\n)\s)*/gi, "$1"],	// Cool little RegExp deletes whitespace around linebreak chars.
 					[/\n{3,}/g, "\n\n"],							// Max. 2 consecutive linebreaks
 					/^\s+|\s+$/g									// Trim the front & back
@@ -802,11 +889,37 @@
 					process(rl);
 				}
 				else if (is(rl, "string")) {
+=======
+					[/(?:(?!\n)\s)*(\n+)(?:(?!\n)\s)*/gi, "$1"] // Cool little RegExp deletes whitespace around linebreak chars.
+				]);
+
+				var maxLinebreaks = Number(getParam(ed, "paste_max_consecutive_linebreaks"));
+				if (maxLinebreaks > -1) {
+					var maxLinebreaksRegex = new RegExp("\n{" + (maxLinebreaks + 1) + ",}", "g");
+					var linebreakReplacement = "";
+
+					while (linebreakReplacement.length < maxLinebreaks) {
+						linebreakReplacement += "\n";
+					}
+
+					process([
+						[maxLinebreaksRegex, linebreakReplacement] // Limit max consecutive linebreaks
+					]);
+				}
+
+				content = ed.dom.decode(tinymce.html.Entities.encodeRaw(content));
+
+				// Perform default or custom replacements
+				if (is(rl, "array")) {
+					process(rl);
+				} else if (is(rl, "string")) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					process(new RegExp(rl, "gi"));
 				}
 
 				// Treat paragraphs as specified in the config
 				if (linebr == "none") {
+<<<<<<< HEAD
 					process([
 						[/\n+/g, " "]
 					]);
@@ -820,10 +933,34 @@
 					process([
 						/^\s+|\s+$/g,
 						[/\n\n/g, "</p><p>"],
+=======
+					// Convert all line breaks to space
+					process([
+						[/\n+/g, " "]
+					]);
+				} else if (linebr == "br") {
+					// Convert all line breaks to <br />
+					process([
+						[/\n/g, "<br />"]
+					]);
+				} else if (linebr == "p") {
+					// Convert all line breaks to <p>...</p>
+					process([
+						[/\n+/g, "</p><p>"],
+						[/^(.*<\/p>)(<p>)$/, '<p>$1']
+					]);
+				} else {
+					// defaults to "combined"
+					// Convert single line breaks to <br /> and double line breaks to <p>...</p>
+					process([
+						[/\n\n/g, "</p><p>"],
+						[/^(.*<\/p>)(<p>)$/, '<p>$1'],
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						[/\n/g, "<br />"]
 					]);
 				}
 
+<<<<<<< HEAD
 				// This next piece of code handles the situation where we're pasting more than one paragraph of plain
 				// text, and we are pasting the content into the middle of a block node in the editor.  The block
 				// node gets split at the selection point into "Para A" and "Para B" (for the purposes of explaining).
@@ -893,6 +1030,9 @@
 						d.body.scrollTop = y < vp.y ? y : y - vp.h + 25;
 					}
 				}, 0);
+=======
+				ed.execCommand('mceInsertContent', false, content);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			}
 		},
 

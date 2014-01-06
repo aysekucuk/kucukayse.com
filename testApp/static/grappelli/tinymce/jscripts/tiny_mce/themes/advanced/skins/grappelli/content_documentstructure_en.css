@@ -4,6 +4,10 @@
 
 /* -- Language Specific Settings ---------- */
 
+<<<<<<< HEAD
+=======
+body#tinymce h1:before          { content: "Heading 1"; }
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 body#tinymce h2:before          { content: "Heading 2"; }
 body#tinymce h3:before          { content: "Heading 3"; }
 body#tinymce h4:before          { content: "Heading 4"; }

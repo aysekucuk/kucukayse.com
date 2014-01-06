@@ -18,7 +18,11 @@ var ImageDialog = {
 
 		e = ed.selection.getNode();
 
+<<<<<<< HEAD
 		this.fillFileList('image_list', 'tinyMCEImageList');
+=======
+		this.fillFileList('image_list', tinyMCEPopup.getParam('external_image_list', 'tinyMCEImageList'));
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 		if (e.nodeName == 'IMG') {
 			f.src.value = ed.dom.getAttrib(e, 'src');
@@ -39,7 +43,11 @@ var ImageDialog = {
 	fillFileList : function(id, l) {
 		var dom = tinyMCEPopup.dom, lst = dom.get(id), v, cl;
 
+<<<<<<< HEAD
 		l = window[l];
+=======
+		l = typeof(l) === 'function' ? l() : window[l];
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 		if (l && l.length > 0) {
 			lst.options[lst.options.length] = new Option('', '');
@@ -90,9 +98,19 @@ var ImageDialog = {
 			tinyMCEPopup.editor.execCommand('mceRepaint');
 			tinyMCEPopup.editor.focus();
 		} else {
+<<<<<<< HEAD
 			ed.execCommand('mceInsertContent', false, '<img id="__mce_tmp" />', {skip_undo : 1});
 			ed.dom.setAttribs('__mce_tmp', args);
 			ed.dom.setAttrib('__mce_tmp', 'id', '');
+=======
+			tinymce.each(args, function(value, name) {
+				if (value === "") {
+					delete args[name];
+				}
+			});
+
+			ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			ed.undoManager.add();
 		}
 
@@ -100,10 +118,19 @@ var ImageDialog = {
 	},
 
 	updateStyle : function() {
+<<<<<<< HEAD
 		var dom = tinyMCEPopup.dom, st, v, f = document.forms[0];
 
 		if (tinyMCEPopup.editor.settings.inline_styles) {
 			st = tinyMCEPopup.dom.parseStyle(this.styleVal);
+=======
+		var dom = tinyMCEPopup.dom, st = {}, v, f = document.forms[0];
+
+		if (tinyMCEPopup.editor.settings.inline_styles) {
+			tinymce.each(tinyMCEPopup.dom.parseStyle(this.styleVal), function(value, key) {
+				st[key] = value;
+			});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			// Handle align
 			v = getSelectValue(f, 'align');

@@ -136,8 +136,15 @@
 
 					// Auto save contents each interval time
 					setInterval(function() {
+<<<<<<< HEAD
 						self.storeDraft();
 						ed.nodeChanged();
+=======
+						if (!ed.removed) {
+							self.storeDraft();
+							ed.nodeChanged();
+						}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					}, settings.autosave_interval);
 				}
 			});
@@ -335,7 +342,11 @@
 		 * @method restoreDraft
 		 */
 		restoreDraft : function() {
+<<<<<<< HEAD
 			var self = this, storage = self.storage;
+=======
+			var self = this, storage = self.storage, content;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			if (storage) {
 				content = storage.getItem(self.key);

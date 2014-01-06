@@ -16,7 +16,11 @@ function onLoadInit() {
 	document.getElementById('htmlSource').value = tinyMCEPopup.editor.getContent({source_view : true});
 
 	if (tinyMCEPopup.editor.getParam("theme_advanced_source_editor_wrap", true)) {
+<<<<<<< HEAD
 		setWrap('soft');
+=======
+		turnWrapOn();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		document.getElementById('wraped').checked = true;
 	}
 
@@ -37,11 +41,41 @@ function setWrap(val) {
 	}
 }
 
+<<<<<<< HEAD
 function toggleWordWrap(elm) {
 	if (elm.checked)
 		setWrap('soft');
 	else
 		setWrap('off');
+=======
+function setWhiteSpaceCss(value) {
+	var el = document.getElementById('htmlSource');
+	tinymce.DOM.setStyle(el, 'white-space', value);
+}
+
+function turnWrapOff() {
+	if (tinymce.isWebKit) {
+		setWhiteSpaceCss('pre');
+	} else {
+		setWrap('off');
+	}
+}
+
+function turnWrapOn() {
+	if (tinymce.isWebKit) {
+		setWhiteSpaceCss('pre-wrap');
+	} else {
+		setWrap('soft');
+	}
+}
+
+function toggleWordWrap(elm) {
+	if (elm.checked) {
+		turnWrapOn();
+	} else {
+		turnWrapOff();
+	}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 }
 
 function resizeInputs() {
@@ -51,6 +85,10 @@ function resizeInputs() {
 
 	if (el) {
 		el.style.width = (vp.w - 20) + 'px';
+<<<<<<< HEAD
 		el.style.height = (vp.h - 100) + 'px';
+=======
+		el.style.height = (vp.h - 65) + 'px';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	}
 }

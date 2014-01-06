@@ -27,7 +27,11 @@
 		 * @param {string} url Absolute URL to where the plugin is located.
 		 */
 		init : function(ed) {
+<<<<<<< HEAD
 			var t = this, showMenu, contextmenuNeverUseNative, realCtrlKey;
+=======
+			var t = this, showMenu, contextmenuNeverUseNative, realCtrlKey, hideMenu;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			t.editor = ed;
 
@@ -42,6 +46,13 @@
 			 */
 			t.onContextMenu = new tinymce.util.Dispatcher(this);
 
+<<<<<<< HEAD
+=======
+			hideMenu = function(e) {
+				hide(ed, e);
+			};
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			showMenu = ed.onContextMenu.add(function(ed, e) {
 				// Block TinyMCE menu on ctrlKey and work around Safari issue
 				if ((realCtrlKey !== 0 ? realCtrlKey : e.ctrlKey) && !contextmenuNeverUseNative)
@@ -53,6 +64,7 @@
 				if (e.target.nodeName == 'IMG')
 					ed.selection.select(e.target);
 
+<<<<<<< HEAD
 				t._getMenu(ed).showMenu(e.clientX || e.pageX, e.clientY || e.pageX);
 				Event.add(ed.getDoc(), 'click', function(e) {
 					hide(ed, e);
@@ -61,6 +73,14 @@
 				ed.nodeChanged();
 			});
 
+=======
+				t._getMenu(ed).showMenu(e.clientX || e.pageX, e.clientY || e.pageY);
+				Event.add(ed.getDoc(), 'click', hideMenu);
+
+				ed.nodeChanged();
+			});
+			
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			ed.onRemove.add(function() {
 				if (t._menu)
 					t._menu.removeAll();
@@ -78,8 +98,14 @@
 
 				if (t._menu) {
 					t._menu.removeAll();
+<<<<<<< HEAD
 					t._menu.destroy();
 					Event.remove(ed.getDoc(), 'click', hide);
+=======
+					 t._menu.destroy();
+					Event.remove(ed.getDoc(), 'click', hideMenu);
+					t._menu = null;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				}
 			};
 
@@ -111,19 +137,31 @@
 		},
 
 		_getMenu : function(ed) {
+<<<<<<< HEAD
 			var t = this, m = t._menu, se = ed.selection, col = se.isCollapsed(), el = se.getNode() || ed.getBody(), am, p1, p2;
+=======
+			var t = this, m = t._menu, se = ed.selection, col = se.isCollapsed(), el = se.getNode() || ed.getBody(), am, p;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			if (m) {
 				m.removeAll();
 				m.destroy();
 			}
 
+<<<<<<< HEAD
 			p1 = DOM.getPos(ed.getContentAreaContainer());
 			p2 = DOM.getPos(ed.getContainer());
 
 			m = ed.controlManager.createDropMenu('contextmenu', {
 				offset_x : p1.x + ed.getParam('contextmenu_offset_x', 0),
 				offset_y : p1.y + ed.getParam('contextmenu_offset_y', 0),
+=======
+			p = DOM.getPos(ed.getContentAreaContainer());
+
+			m = ed.controlManager.createDropMenu('contextmenu', {
+				offset_x : p.x + ed.getParam('contextmenu_offset_x', 0),
+				offset_y : p.y + ed.getParam('contextmenu_offset_y', 0),
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				constrain : 1,
 				keyboard_focus: true
 			});

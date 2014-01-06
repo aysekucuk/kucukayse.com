@@ -11,6 +11,10 @@ body#tinymce.fullscreen {
 
 /* -- Typographic Elements ---------- */
 
+<<<<<<< HEAD
+=======
+body#tinymce h1, 
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 body#tinymce h2, 
 body#tinymce h3, 
 body#tinymce h4, 
@@ -34,6 +38,10 @@ body#tinymce p.mce-grid-container {
 body#tinymce table.mceItemTable td {
     border: 1px dashed #bbb !important;
 }
+<<<<<<< HEAD
+=======
+body#tinymce div h1, 
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 body#tinymce div h2, 
 body#tinymce div h3, 
 body#tinymce div h4, 
@@ -43,6 +51,10 @@ body#tinymce div pre {
     padding-left: 0;
 }
 
+<<<<<<< HEAD
+=======
+body#tinymce h1:before, 
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 body#tinymce h2:before, 
 body#tinymce h3:before, 
 body#tinymce h4:before, 

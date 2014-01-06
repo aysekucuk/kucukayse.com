@@ -8,6 +8,36 @@
 		return document.getElementById(id);
 	}
 
+<<<<<<< HEAD
+=======
+	function clone(obj) {
+		var i, len, copy, attr;
+
+		if (null == obj || "object" != typeof obj)
+			return obj;
+
+		// Handle Array
+		if ('length' in obj) {
+			copy = [];
+
+			for (i = 0, len = obj.length; i < len; ++i) {
+				copy[i] = clone(obj[i]);
+			}
+
+			return copy;
+		}
+
+		// Handle Object
+		copy = {};
+		for (attr in obj) {
+			if (obj.hasOwnProperty(attr))
+				copy[attr] = clone(obj[attr]);
+		}
+
+		return copy;
+	}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	function getVal(id) {
 		var elm = get(id);
 
@@ -20,17 +50,30 @@
 		return elm.value;
 	}
 
+<<<<<<< HEAD
 	function setVal(id, value) {
 		if (typeof(value) != 'undefined') {
+=======
+	function setVal(id, value, name) {
+		if (typeof(value) != 'undefined' && value != null) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			var elm = get(id);
 
 			if (elm.nodeName == "SELECT")
 				selectByValue(document.forms[0], id, value);
 			else if (elm.type == "checkbox") {
+<<<<<<< HEAD
 				if (typeof(value) == 'string')
 					elm.checked = value.toLowerCase() === 'true' ? true : false;
 				else
 					elm.checked = !!value;
+=======
+				if (typeof(value) == 'string') {
+					value = value.toLowerCase();
+					value = (!name && value === 'true') || (name && value === name.toLowerCase());
+				}
+				elm.checked = !!value;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			} else
 				elm.value = value;
 		}
@@ -38,19 +81,35 @@
 
 	window.Media = {
 		init : function() {
+<<<<<<< HEAD
 			var html, editor;
 
 			this.editor = editor = tinyMCEPopup.editor;
+=======
+			var html, editor, self = this;
+
+			self.editor = editor = tinyMCEPopup.editor;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			// Setup file browsers and color pickers
 			get('filebrowsercontainer').innerHTML = getBrowserHTML('filebrowser','src','media','media');
 			get('qtsrcfilebrowsercontainer').innerHTML = getBrowserHTML('qtsrcfilebrowser','quicktime_qtsrc','media','media');
 			get('bgcolor_pickcontainer').innerHTML = getColorPickerHTML('bgcolor_pick','bgcolor');
+<<<<<<< HEAD
 			get('video_altsource1_filebrowser').innerHTML = getBrowserHTML('filebrowser_altsource1','video_altsource1','media','media');
 			get('video_altsource2_filebrowser').innerHTML = getBrowserHTML('filebrowser_altsource2','video_altsource2','media','media');
 			get('video_poster_filebrowser').innerHTML = getBrowserHTML('filebrowser_poster','video_poster','media','image');
 
 			html = this.getMediaListHTML('medialist', 'src', 'media', 'media');
+=======
+			get('video_altsource1_filebrowser').innerHTML = getBrowserHTML('video_filebrowser_altsource1','video_altsource1','media','media');
+			get('video_altsource2_filebrowser').innerHTML = getBrowserHTML('video_filebrowser_altsource2','video_altsource2','media','media');
+			get('audio_altsource1_filebrowser').innerHTML = getBrowserHTML('audio_filebrowser_altsource1','audio_altsource1','media','media');
+			get('audio_altsource2_filebrowser').innerHTML = getBrowserHTML('audio_filebrowser_altsource2','audio_altsource2','media','media');
+			get('video_poster_filebrowser').innerHTML = getBrowserHTML('filebrowser_poster','video_poster','image','media');
+
+			html = self.getMediaListHTML('medialist', 'src', 'media', 'media');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			if (html == "")
 				get("linklistrow").style.display = 'none';
 			else
@@ -59,6 +118,7 @@
 			if (isVisible('filebrowser'))
 				get('src').style.width = '230px';
 
+<<<<<<< HEAD
 			if (isVisible('filebrowser_altsource1'))
 				get('video_altsource1').style.width = '220px';
 
@@ -71,6 +131,31 @@
 			this.data = tinyMCEPopup.getWindowArg('data');
 			this.dataToForm();
 			this.preview();
+=======
+			if (isVisible('video_filebrowser_altsource1'))
+				get('video_altsource1').style.width = '220px';
+
+			if (isVisible('video_filebrowser_altsource2'))
+				get('video_altsource2').style.width = '220px';
+
+			if (isVisible('audio_filebrowser_altsource1'))
+				get('audio_altsource1').style.width = '220px';
+
+			if (isVisible('audio_filebrowser_altsource2'))
+				get('audio_altsource2').style.width = '220px';
+
+			if (isVisible('filebrowser_poster'))
+				get('video_poster').style.width = '220px';
+
+			editor.dom.setOuterHTML(get('media_type'), self.getMediaTypeHTML(editor));
+
+			self.setDefaultDialogSettings(editor);
+			self.data = clone(tinyMCEPopup.getWindowArg('data'));
+			self.dataToForm();
+			self.preview();
+
+			updateColor('bgcolor_pick', 'bgcolor');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		},
 
 		insert : function() {
@@ -88,7 +173,11 @@
 		},
 
 		moveStates : function(to_form, field) {
+<<<<<<< HEAD
 			var data = this.data, editor = this.editor, data = this.data,
+=======
+			var data = this.data, editor = this.editor,
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				mediaPlugin = editor.plugins.media, ext, src, typeInfo, defaultStates, src;
 
 			defaultStates = {
@@ -135,6 +224,7 @@
 						formItemName = type == 'global' ? name : type + '_' + name;
 
 						if (type == 'global')
+<<<<<<< HEAD
 							list = data;
 						else if (type == 'video') {
 							list = data.video.attrs;
@@ -147,11 +237,29 @@
 						if (list) {
 							if (to_form) {
 								setVal(formItemName, list[name]);
+=======
+						list = data;
+					else if (type == 'video' || type == 'audio') {
+							list = data.video.attrs;
+
+							if (!list && !to_form)
+							data.video.attrs = list = {};
+						} else
+						list = data.params;
+
+						if (list) {
+							if (to_form) {
+								setVal(formItemName, list[name], type == 'video' || type == 'audio' ? name : '');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 							} else {
 								delete list[name];
 
 								value = getVal(formItemName);
+<<<<<<< HEAD
 								if (type == 'video' && value === true)
+=======
+								if ((type == 'video' || type == 'audio') && value === true)
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 									value = name;
 
 								if (defaultStates[formItemName]) {
@@ -184,7 +292,11 @@
 					setVal('media_type', data.type);
 				}
 
+<<<<<<< HEAD
 				if (data.type == "video") {
+=======
+				if (data.type == "video" || data.type == "audio") {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					if (!data.video.sources)
 						data.video.sources = [];
 
@@ -194,11 +306,19 @@
 
 			// Hide all fieldsets and show the one active
 			get('video_options').style.display = 'none';
+<<<<<<< HEAD
+=======
+			get('audio_options').style.display = 'none';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			get('flash_options').style.display = 'none';
 			get('quicktime_options').style.display = 'none';
 			get('shockwave_options').style.display = 'none';
 			get('windowsmedia_options').style.display = 'none';
 			get('realmedia_options').style.display = 'none';
+<<<<<<< HEAD
+=======
+			get('embeddedaudio_options').style.display = 'none';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			if (get(data.type + '_options'))
 				get(data.type + '_options').style.display = 'block';
@@ -210,7 +330,13 @@
 			setOptions('shockwave', 'sound,progress,autostart,swliveconnect,swvolume,swstretchstyle,swstretchhalign,swstretchvalign');
 			setOptions('windowsmedia', 'autostart,enabled,enablecontextmenu,fullscreen,invokeurls,mute,stretchtofit,windowlessvideo,balance,baseurl,captioningid,currentmarker,currentposition,defaultframe,playcount,rate,uimode,volume');
 			setOptions('realmedia', 'autostart,loop,autogotourl,center,imagestatus,maintainaspect,nojava,prefetch,shuffle,console,controls,numloop,scriptcallbacks');
+<<<<<<< HEAD
 			setOptions('video', 'poster,autoplay,loop,preload,controls');
+=======
+			setOptions('video', 'poster,autoplay,loop,muted,preload,controls');
+			setOptions('audio', 'autoplay,loop,preload,controls');
+			setOptions('embeddedaudio', 'autoplay,loop,controls');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			setOptions('global', 'id,name,vspace,hspace,bgcolor,align,width,height');
 
 			if (to_form) {
@@ -225,12 +351,30 @@
 					src = data.video.sources[2];
 					if (src)
 						setVal('video_altsource2', src.src);
+<<<<<<< HEAD
+=======
+                } else if (data.type == 'audio') {
+                    if (data.video.sources[0])
+                        setVal('src', data.video.sources[0].src);
+                    
+                    src = data.video.sources[1];
+                    if (src)
+                        setVal('audio_altsource1', src.src);
+                    
+                    src = data.video.sources[2];
+                    if (src)
+                        setVal('audio_altsource2', src.src);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				} else {
 					// Check flash vars
 					if (data.type == 'flash') {
 						tinymce.each(editor.getParam('flash_video_player_flashvars', {url : '$url', poster : '$poster'}), function(value, name) {
 							if (value == '$url')
+<<<<<<< HEAD
 								data.params.src = parseQueryParams(data.params.flashvars)[name] || data.params.src;
+=======
+								data.params.src = parseQueryParams(data.params.flashvars)[name] || data.params.src || '';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						});
 					}
 
@@ -238,13 +382,20 @@
 				}
 			} else {
 				src = getVal("src");
+<<<<<<< HEAD
 	
 				// YouTube
 				if (src.match(/youtube.com(.+)v=([^&]+)/)) {
+=======
+
+				// YouTube Embed
+				if (src.match(/youtube\.com\/embed\/\w+/)) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					data.width = 425;
 					data.height = 350;
 					data.params.frameborder = '0';
 					data.type = 'iframe';
+<<<<<<< HEAD
 					src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
 					setVal('src', src);
 					setVal('media_type', data.type);
@@ -252,6 +403,36 @@
 
 				// Google video
 				if (src.match(/video.google.com(.+)docid=([^&]+)/)) {
+=======
+					setVal('src', src);
+					setVal('media_type', data.type);
+				} else {
+					// YouTube *NEW*
+					if (src.match(/youtu\.be\/[a-z1-9.-_]+/)) {
+						data.width = 425;
+						data.height = 350;
+						data.params.frameborder = '0';
+						data.type = 'iframe';
+						src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+						setVal('src', src);
+						setVal('media_type', data.type);
+					}
+
+					// YouTube
+					if (src.match(/youtube\.com(.+)v=([^&]+)/)) {
+						data.width = 425;
+						data.height = 350;
+						data.params.frameborder = '0';
+						data.type = 'iframe';
+						src = 'http://www.youtube.com/embed/' + src.match(/v=([^&]+)/)[1];
+						setVal('src', src);
+						setVal('media_type', data.type);
+					}
+				}
+
+				// Google video
+				if (src.match(/video\.google\.com(.+)docid=([^&]+)/)) {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					data.width = 425;
 					data.height = 326;
 					data.type = 'flash';
@@ -259,6 +440,42 @@
 					setVal('src', src);
 					setVal('media_type', data.type);
 				}
+<<<<<<< HEAD
+=======
+				
+				// Vimeo
+				if (src.match(/vimeo\.com\/([0-9]+)/)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					src = 'http://player.vimeo.com/video/' + src.match(/vimeo.com\/([0-9]+)/)[1];
+					setVal('src', src);
+					setVal('media_type', data.type);
+				}
+            
+				// stream.cz
+				if (src.match(/stream\.cz\/((?!object).)*\/([0-9]+)/)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					src = 'http://www.stream.cz/object/' + src.match(/stream.cz\/[^/]+\/([0-9]+)/)[1];
+					setVal('src', src);
+					setVal('media_type', data.type);
+				}
+				
+				// Google maps
+				if (src.match(/maps\.google\.([a-z]{2,3})\/maps\/(.+)msid=(.+)/)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					src = 'http://maps.google.com/maps/ms?msid=' + src.match(/msid=(.+)/)[1] + "&output=embed";
+					setVal('src', src);
+					setVal('media_type', data.type);
+				}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				if (data.type == 'video') {
 					if (!data.video.sources)
@@ -273,12 +490,33 @@
 					src = getVal("video_altsource2");
 					if (src)
 						data.video.sources[2] = {src : src};
+<<<<<<< HEAD
+=======
+                } else if (data.type == 'audio') {
+                    if (!data.video.sources)
+                        data.video.sources = [];
+                    
+                    data.video.sources[0] = {src : src};
+                    
+                    src = getVal("audio_altsource1");
+                    if (src)
+                        data.video.sources[1] = {src : src};
+                    
+                    src = getVal("audio_altsource2");
+                    if (src)
+                        data.video.sources[2] = {src : src};
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				} else
 					data.params.src = src;
 
 				// Set default size
+<<<<<<< HEAD
 				setVal('width', data.width || 320);
 				setVal('height', data.height || 240);
+=======
+                setVal('width', data.width || (data.type == 'audio' ? 300 : 320));
+                setVal('height', data.height || (data.type == 'audio' ? 32 : 240));
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			}
 		},
 
@@ -296,7 +534,11 @@
 				this.panel = 'source';
 			} else {
 				if (this.panel == 'source') {
+<<<<<<< HEAD
 					this.data = this.editor.plugins.media.htmlToData(getVal('source'));
+=======
+					this.data = clone(this.editor.plugins.media.htmlToData(getVal('source')));
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					this.dataToForm();
 					this.panel = '';
 				}
@@ -307,16 +549,26 @@
 		},
 
 		beforeResize : function() {
+<<<<<<< HEAD
 			this.width = parseInt(getVal('width') || "320", 10);
 			this.height = parseInt(getVal('height') || "240", 10);
+=======
+            this.width = parseInt(getVal('width') || (this.data.type == 'audio' ? "300" : "320"), 10);
+            this.height = parseInt(getVal('height') || (this.data.type == 'audio' ? "32" : "240"), 10);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		},
 
 		changeSize : function(type) {
 			var width, height, scale, size;
 
 			if (get('constrain').checked) {
+<<<<<<< HEAD
 				width = parseInt(getVal('width') || "320", 10);
 				height = parseInt(getVal('height') || "240", 10);
+=======
+                width = parseInt(getVal('width') || (this.data.type == 'audio' ? "300" : "320"), 10);
+                height = parseInt(getVal('height') || (this.data.type == 'audio' ? "32" : "240"), 10);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				if (type == 'width') {
 					this.height = Math.round((width / this.width) * height);
@@ -344,6 +596,45 @@
 			}
 
 			return "";
+<<<<<<< HEAD
+=======
+		},
+
+		getMediaTypeHTML : function(editor) {
+			function option(media_type, element) {
+				if (!editor.schema.getElementRule(element || media_type)) {
+					return '';
+				}
+
+				return '<option value="'+media_type+'">'+tinyMCEPopup.editor.translate("media_dlg."+media_type)+'</option>'
+			}
+
+			var html = "";
+
+			html += '<select id="media_type" name="media_type" onchange="Media.formToData(\'type\');">';
+			html += option("video");
+			html += option("audio");
+			html += option("flash", "object");
+			html += option("quicktime", "object");
+			html += option("shockwave", "object");
+			html += option("windowsmedia", "object");
+			html += option("realmedia", "object");
+			html += option("iframe");
+
+			if (editor.getParam('media_embedded_audio', false)) {
+				html += option('embeddedaudio', "object");
+			}
+
+			html += '</select>';
+			return html;
+		},
+
+		setDefaultDialogSettings : function(editor) {
+			var defaultDialogSettings = editor.getParam("media_dialog_defaults", {});
+			tinymce.each(defaultDialogSettings, function(v, k) {
+				setVal(k, v);
+			});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		}
 	};
 
@@ -351,4 +642,8 @@
 	tinyMCEPopup.onInit.add(function() {
 		Media.init();
 	});
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8

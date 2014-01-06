@@ -15,6 +15,7 @@
 
 			t.editor = ed;
 
+<<<<<<< HEAD
 			ed.addCommand('mceDirectionLTR', function() {
 				var e = ed.dom.getParent(ed.selection.getNode(), ed.dom.isBlock);
 
@@ -39,6 +40,35 @@
 				}
 
 				ed.nodeChanged();
+=======
+			function setDir(dir) {
+				var dom = ed.dom, curDir, blocks = ed.selection.getSelectedBlocks();
+
+				if (blocks.length) {
+					curDir = dom.getAttrib(blocks[0], "dir");
+
+					tinymce.each(blocks, function(block) {
+						// Add dir to block if the parent block doesn't already have that dir
+						if (!dom.getParent(block.parentNode, "*[dir='" + dir + "']", dom.getRoot())) {
+							if (curDir != dir) {
+								dom.setAttrib(block, "dir", dir);
+							} else {
+								dom.setAttrib(block, "dir", null);
+							}
+						}
+					});
+
+					ed.nodeChanged();
+				}
+			}
+
+			ed.addCommand('mceDirectionLTR', function() {
+				setDir("ltr");
+			});
+
+			ed.addCommand('mceDirectionRTL', function() {
+				setDir("rtl");
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			});
 
 			ed.addButton('ltr', {title : 'directionality.ltr_desc', cmd : 'mceDirectionLTR'});

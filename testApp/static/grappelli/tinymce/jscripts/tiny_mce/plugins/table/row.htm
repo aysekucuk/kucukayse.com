@@ -5,6 +5,10 @@
 	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
 	<script type="text/javascript" src="../../utils/mctabs.js"></script>
 	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+<<<<<<< HEAD
+=======
+	<script type="text/javascript" src="../../utils/validate.js"></script>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	<script type="text/javascript" src="../../utils/editable_selects.js"></script>
 	<script type="text/javascript" src="js/row.js"></script>
 	<link href="css/row.css" rel="stylesheet" type="text/css" />
@@ -27,7 +31,11 @@
 						<tr>
 							<td><label for="rowtype">{#table_dlg.rowtype}</label></td>
 							<td class="col2">
+<<<<<<< HEAD
 								<select id="rowtype" name="rowtype" class="mceFocus">
+=======
+								<select id="rowtype" name="rowtype" class="mceFocus" onChange="changedRowType();">
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 									<option value="thead">{#table_dlg.thead}</option>
 									<option value="tbody">{#table_dlg.tbody}</option>
 									<option value="tfoot">{#table_dlg.tfoot}</option>
@@ -70,7 +78,11 @@
 
 						<tr>
 							<td><label for="height">{#table_dlg.height}</label></td>
+<<<<<<< HEAD
 							<td class="col2"><input name="height" type="text" id="height" value="" size="4" maxlength="4" onchange="changedSize();" /></td>
+=======
+							<td class="col2"><input name="height" type="text" id="height" value="" size="7" maxlength="7" onchange="changedSize();" class="size" /></td>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						</tr>
 					</table>
 				</fieldset>
@@ -82,8 +94,13 @@
 
 					<table role="presentation" border="0" cellpadding="0" cellspacing="4">
 						<tr>
+<<<<<<< HEAD
 							<td class="column1"><label for="id">{#table_dlg.id}</label></td> 
 							<td><input id="id" name="id" type="text" value="" style="width: 200px" /></td> 
+=======
+							<td class="column1"><label for="id">{#table_dlg.id}</label></td>
+							<td><input id="id" name="id" type="text" value="" style="width: 200px" /></td>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						</tr>
 
 						<tr>
@@ -92,6 +109,7 @@
 						</tr>
 
 						<tr>
+<<<<<<< HEAD
 							<td class="column1"><label for="dir">{#table_dlg.langdir}</label></td> 
 							<td>
 								<select id="dir" name="dir" style="width: 200px"> 
@@ -111,6 +129,27 @@
 
 						<tr>
 							<td class="column1"><label for="backgroundimage">{#table_dlg.bgimage}</label></td> 
+=======
+							<td class="column1"><label for="dir">{#table_dlg.langdir}</label></td>
+							<td>
+								<select id="dir" name="dir" style="width: 200px">
+										<option value="">{#not_set}</option>
+										<option value="ltr">{#table_dlg.ltr}</option>
+										<option value="rtl">{#table_dlg.rtl}</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="column1"><label for="lang">{#table_dlg.langcode}</label></td>
+							<td>
+								<input id="lang" name="lang" type="text" value="" style="width: 200px" />
+							</td>
+						</tr>
+
+						<tr>
+							<td class="column1"><label for="backgroundimage">{#table_dlg.bgimage}</label></td>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 							<td>
 								<table role="presentation" border="0" cellpadding="0" cellspacing="0">
 									<tr>
@@ -118,11 +157,19 @@
 										<td id="backgroundimagebrowsercontainer">&nbsp;</td>
 									</tr>
 								</table>
+<<<<<<< HEAD
 							</td> 
 						</tr>
 
 						<tr>
 							<td class="column1"><label for="bgcolor" id="bgcolor_label">{#table_dlg.bgcolor}</label></td> 
+=======
+							</td>
+						</tr>
+
+						<tr>
+							<td class="column1"><label for="bgcolor" id="bgcolor_label">{#table_dlg.bgcolor}</label></td>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 							<td>
 								<span role="group" aria-labelledby="bgcolor_label">
 								<table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -132,7 +179,11 @@
 									</tr>
 								</table>
 								</span>
+<<<<<<< HEAD
 							</td> 
+=======
+							</td>
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						</tr>
 					</table>
 				</fieldset>

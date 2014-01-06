@@ -27,7 +27,11 @@
 					else {
 						DOM.win.setTimeout(function() {
 							tinymce.dom.Event.remove(DOM.win, 'resize', t.resizeFunc);
+<<<<<<< HEAD
 							tinyMCE.get(ed.getParam('fullscreen_editor_id')).setContent(ed.getContent({format : 'raw'}), {format : 'raw'});
+=======
+							tinyMCE.get(ed.getParam('fullscreen_editor_id')).setContent(ed.getContent());
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 							tinyMCE.remove(ed);
 							DOM.remove('mce_fullscreen_container');
 							de.style.overflow = ed.getParam('fullscreen_html_overflow');
@@ -65,7 +69,11 @@
 
 					// Fixes an IE bug where the scrollbars doesn't reappear
 					if (tinymce.isIE && (s.fullscreen_html_overflow == 'visible' || s.fullscreen_html_overflow == 'scroll'))
+<<<<<<< HEAD
 						s.fullscreen_html_overflow = 'auto'; 
+=======
+						s.fullscreen_html_overflow = 'auto';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 					if (s.fullscreen_overflow == '0px')
 						s.fullscreen_overflow = '';
@@ -79,13 +87,21 @@
 						vp.h -= 1;
 
 					// Use fixed position if it exists
+<<<<<<< HEAD
 					if (tinymce.isIE6)
+=======
+					if (tinymce.isIE6 || document.compatMode == 'BackCompat')
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						posCss = 'absolute;top:' + vp.y;
 					else
 						posCss = 'fixed;top:0';
 
 					n = DOM.add(DOM.doc.body, 'div', {
+<<<<<<< HEAD
 						id : 'mce_fullscreen_container', 
+=======
+						id : 'mce_fullscreen_container',
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						style : 'position:' + posCss + ';left:0;width:' + vp.w + 'px;height:' + vp.h + 'px;z-index:200000;'});
 					DOM.add(n, 'div', {id : 'mce_fullscreen'});
 
@@ -100,7 +116,11 @@
 					s.fullscreen_editor_id = ed.id;
 					s.theme_advanced_resizing = false;
 					s.save_onsavecallback = function() {
+<<<<<<< HEAD
 						ed.setContent(tinyMCE.get(s.id).getContent({format : 'raw'}), {format : 'raw'});
+=======
+						ed.setContent(tinyMCE.get(s.id).getContent());
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						ed.execCommand('mceSave');
 					};
 
@@ -127,7 +147,11 @@
 						var vp = tinymce.DOM.getViewPort(), fed = t.fullscreenEditor, outerSize, innerSize;
 
 						// Get outer/inner size to get a delta size that can be used to calc the new iframe size
+<<<<<<< HEAD
 						outerSize = fed.dom.getSize(fed.getContainer().firstChild);
+=======
+						outerSize = fed.dom.getSize(fed.getContainer().getElementsByTagName('table')[0]);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						innerSize = fed.dom.getSize(fed.getContainer().getElementsByTagName('iframe')[0]);
 
 						fed.theme.resizeTo(vp.w - outerSize.w + innerSize.w, vp.h - outerSize.h + innerSize.h);
@@ -156,4 +180,8 @@
 
 	// Register plugin
 	tinymce.PluginManager.add('fullscreen', tinymce.plugins.FullScreenPlugin);
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8

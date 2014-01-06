@@ -83,7 +83,11 @@
 .defaultSkin .mce_forecolor span.mceAction, .defaultSkin .mce_backcolor span.mceAction {overflow:hidden; height:16px}
 
 /* Menu */
+<<<<<<< HEAD
 .defaultSkin .mceMenu {position:absolute; left:0; top:0; z-index:1000; border:1px solid #D4D0C8}
+=======
+.defaultSkin .mceMenu {position:absolute; left:0; top:0; z-index:1000; border:1px solid #D4D0C8; direction:ltr}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 .defaultSkin .mceNoIcons span.mceIcon {width:0;}
 .defaultSkin .mceNoIcons a .mceText {padding-left:10px}
 .defaultSkin .mceMenu table {background:#FFF}
@@ -103,11 +107,22 @@
 .defaultSkin .mceNoIcons .mceMenuItemSelected a {background:url(img/menu_arrow.gif) no-repeat -6px center}
 .defaultSkin .mceMenu span.mceMenuLine {display:none}
 .defaultSkin .mceMenuItemSub a {background:url(img/menu_arrow.gif) no-repeat top right;}
+<<<<<<< HEAD
+=======
+.defaultSkin .mceMenuItem td, .defaultSkin .mceMenuItem th {line-height: normal}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 /* Progress,Resize */
 .defaultSkin .mceBlocker {position:absolute; left:0; top:0; z-index:1000; opacity:0.5; -ms-filter:'alpha(opacity=50)'; filter:alpha(opacity=50); background:#FFF}
 .defaultSkin .mceProgress {position:absolute; left:0; top:0; z-index:1001; background:url(img/progress.gif) no-repeat; width:32px; height:32px; margin:-16px 0 0 -16px}
 
+<<<<<<< HEAD
+=======
+/* Rtl */
+.mceRtl .mceListBox .mceText {text-align: right; padding: 0 4px 0 0}
+.mceRtl .mceMenuItem .mceText {text-align: right}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 /* Formats */
 .defaultSkin .mce_formatPreview a {font-size:10px}
 .defaultSkin .mce_p span.mceText {}
@@ -211,3 +226,7 @@
 .defaultSkin span.mce_pagebreak {background-position:0 -40px}
 .defaultSkin span.mce_restoredraft {background-position:-20px -40px}
 .defaultSkin span.mce_spellchecker {background-position:-540px -20px}
+<<<<<<< HEAD
+=======
+.defaultSkin span.mce_visualblocks {background-position: -40px -40px}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8

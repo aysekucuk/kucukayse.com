@@ -27,10 +27,48 @@ var defaultBorderStyle = "none;solid;dashed;dotted;double;groove;ridge;inset;out
 var defaultBorderWidth = "thin;medium;thick";
 var defaultListType = "disc;circle;square;decimal;lower-roman;upper-roman;lower-alpha;upper-alpha;none";
 
+<<<<<<< HEAD
 function init() {
 	var ce = document.getElementById('container'), h;
 
 	ce.style.cssText = tinyMCEPopup.getWindowArg('style_text');
+=======
+function aggregateStyles(allStyles) {
+	var mergedStyles = {};
+
+	tinymce.each(allStyles, function(style) {
+		if (style !== '') {
+			var parsedStyles = tinyMCEPopup.editor.dom.parseStyle(style);
+			for (var name in parsedStyles) {
+				if (parsedStyles.hasOwnProperty(name)) {
+					if (mergedStyles[name] === undefined) {
+						mergedStyles[name] = parsedStyles[name];
+					}
+					else if (name === 'text-decoration') {
+						if (mergedStyles[name].indexOf(parsedStyles[name]) === -1) {
+							mergedStyles[name] = mergedStyles[name] +' '+ parsedStyles[name];
+						}
+					}
+				}
+			}
+		}
+	});
+
+  return mergedStyles;
+}
+
+var applyActionIsInsert;
+var existingStyles;
+
+function init(ed) {
+	var ce = document.getElementById('container'), h;
+
+	existingStyles = aggregateStyles(tinyMCEPopup.getWindowArg('styles'));
+	ce.style.cssText = tinyMCEPopup.editor.dom.serializeStyle(existingStyles);
+
+	applyActionIsInsert = ed.getParam("edit_css_style_insert_span", false);
+	document.getElementById('toggle_insert_span').checked = applyActionIsInsert;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 	h = getBrowserHTML('background_image_browser','background_image','image','advimage');
 	document.getElementById("background_image_browser").innerHTML = h;
@@ -144,6 +182,11 @@ function setupFormData() {
 	f.text_overline.checked = inStr(ce.style.textDecoration, 'overline');
 	f.text_linethrough.checked = inStr(ce.style.textDecoration, 'line-through');
 	f.text_blink.checked = inStr(ce.style.textDecoration, 'blink');
+<<<<<<< HEAD
+=======
+	f.text_none.checked = inStr(ce.style.textDecoration, 'none');
+	updateTextDecorations();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 	// Setup background fields
 
@@ -366,13 +409,48 @@ function hasEqualValues(a) {
 	return true;
 }
 
+<<<<<<< HEAD
+=======
+function toggleApplyAction() {
+	applyActionIsInsert = ! applyActionIsInsert;
+}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 function applyAction() {
 	var ce = document.getElementById('container'), ed = tinyMCEPopup.editor;
 
 	generateCSS();
 
 	tinyMCEPopup.restoreSelection();
+<<<<<<< HEAD
 	ed.dom.setAttrib(ed.selection.getNode(), 'style', tinyMCEPopup.editor.dom.serializeStyle(tinyMCEPopup.editor.dom.parseStyle(ce.style.cssText)));
+=======
+
+	var newStyles = tinyMCEPopup.editor.dom.parseStyle(ce.style.cssText);
+
+	if (applyActionIsInsert) {
+		ed.formatter.register('plugin_style', {
+			inline: 'span', styles: existingStyles
+		});
+		ed.formatter.remove('plugin_style');
+
+		ed.formatter.register('plugin_style', {
+			inline: 'span', styles: newStyles
+		});
+		ed.formatter.apply('plugin_style');
+	} else {
+		var nodes;
+
+		if (tinyMCEPopup.getWindowArg('applyStyleToBlocks')) {
+			nodes = ed.selection.getSelectedBlocks();
+		}
+		else {
+			nodes = ed.selection.getNode();
+		}
+
+		ed.dom.setAttrib(nodes, 'style', tinyMCEPopup.editor.dom.serializeStyle(newStyles));
+	}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 }
 
 function updateAction() {
@@ -632,4 +710,20 @@ function synch(fr, to) {
 		selectByValue(f, to + "_measurement", f.elements[fr + "_measurement"].value);
 }
 
+<<<<<<< HEAD
+=======
+function updateTextDecorations(){
+	var el = document.forms[0].elements;
+
+	var textDecorations = ["text_underline", "text_overline", "text_linethrough", "text_blink"];
+	var noneChecked = el["text_none"].checked;
+	tinymce.each(textDecorations, function(id) {
+		el[id].disabled = noneChecked;
+		if (noneChecked) {
+			el[id].checked = false;
+		}
+	});
+}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 tinyMCEPopup.onInit.add(init);

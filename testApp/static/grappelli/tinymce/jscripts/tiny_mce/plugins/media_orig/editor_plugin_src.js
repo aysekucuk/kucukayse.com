@@ -23,9 +23,21 @@
 		["Java", "8ad9c840-044e-11d1-b3e9-00805f499d93", "application/x-java-applet", "http://java.sun.com/products/plugin/autodl/jinstall-1_5_0-windows-i586.cab#Version=1,5,0,0"],
 		["Silverlight", "dfeaf541-f3e1-4c24-acac-99c30715084a", "application/x-silverlight-2"],
 		["Iframe"],
+<<<<<<< HEAD
 		["Video"]
 	];
 
+=======
+		["Video"],
+		["EmbeddedAudio"],
+		["Audio"]
+	];
+
+	function normalizeSize(size) {
+		return typeof(size) == "string" ? size.replace(/[^0-9%]/g, '') : size;
+	}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	function toArray(obj) {
 		var undef, out, i;
 
@@ -86,11 +98,20 @@
 				"silverlight=xap;" +
 				"flash=swf,flv;" +
 				"shockwave=dcr;" +
+<<<<<<< HEAD
 				"quicktime=mov,qt,mpg,mp3,mpeg;" +
 				"shockwave=dcr;" +
 				"windowsmedia=avi,wmv,wm,asf,asx,wmx,wvx;" +
 				"realmedia=rm,ra,ram;" +
 				"java=jar"
+=======
+				"quicktime=mov,qt,mpg,mpeg;" +
+				"shockwave=dcr;" +
+				"windowsmedia=avi,wmv,wm,asf,asx,wmx,wvx;" +
+				"realmedia=rm,ra,ram;" +
+				"java=jar;" +
+				"audio=mp3,ogg"
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			).split(';'), function(item) {
 				var i, extensions, type;
 
@@ -155,6 +176,7 @@
 
 				img = ed.selection.getNode();
 				if (isMediaImg(img)) {
+<<<<<<< HEAD
 					data = JSON.parse(ed.dom.getAttrib(img, 'data-mce-json'));
 
 					// Add some extra properties to the data object
@@ -166,6 +188,22 @@
 					});
 
 					data.type = self.getType(img.className).name.toLowerCase();
+=======
+					data = ed.dom.getAttrib(img, 'data-mce-json');
+					if (data) {
+						data = JSON.parse(data);
+
+						// Add some extra properties to the data object
+						tinymce.each(rootAttributes, function(name) {
+							var value = ed.dom.getAttrib(img, name);
+
+							if (value)
+								data[name] = value;
+						});
+
+						data.type = self.getType(img.className).name.toLowerCase();
+					}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				}
 
 				if (!data) {
@@ -245,13 +283,23 @@
 				id : data.id,
 				style : data.style,
 				align : data.align,
+<<<<<<< HEAD
+=======
+				hspace : data.hspace,
+				vspace : data.vspace,
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				src : self.editor.theme.url + '/img/trans.gif',
 				'class' : 'mceItemMedia mceItem' + self.getType(data.type).name,
 				'data-mce-json' : JSON.serialize(data, "'")
 			});
 
+<<<<<<< HEAD
 			img.width = data.width || "320";
 			img.height = data.height || "240";
+=======
+			img.width = data.width = normalizeSize(data.width || (data.type == 'audio' ? "300" : "320"));
+			img.height = data.height = normalizeSize(data.height || (data.type == 'audio' ? "32" : "240"));
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			return img;
 		},
@@ -260,7 +308,11 @@
 		 * Converts the JSON data object to a HTML string.
 		 */
 		dataToHtml : function(data, force_absolute) {
+<<<<<<< HEAD
 			return this.editor.serializer.serialize(this.dataToImg(data, force_absolute), {force_absolute : force_absolute});
+=======
+			return this.editor.serializer.serialize(this.dataToImg(data, force_absolute), {forced_root_block : '', force_absolute : force_absolute});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		},
 
 		/**
@@ -320,7 +372,11 @@
 		imgToObject : function(node, args) {
 			var self = this, editor = self.editor, video, object, embed, iframe, name, value, data,
 				source, sources, params, param, typeItem, i, item, mp4Source, replacement,
+<<<<<<< HEAD
 				posterSrc, style;
+=======
+				posterSrc, style, audio;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			// Adds the flash player
 			function addPlayer(video_src, poster_src) {
@@ -363,10 +419,21 @@
 				}
 			};
 
+<<<<<<< HEAD
 			data = JSON.parse(node.attr('data-mce-json'));
 			typeItem = this.getType(node.attr('class'));
 
 			style = node.attr('data-mce-style')
+=======
+			data = node.attr('data-mce-json');
+			if (!data)
+				return;
+
+			data = JSON.parse(data);
+			typeItem = this.getType(node.attr('class'));
+
+			style = node.attr('data-mce-style');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			if (!style) {
 				style = node.attr('style');
 
@@ -374,6 +441,13 @@
 					style = editor.dom.serializeStyle(editor.dom.parseStyle(style, 'img'));
 			}
 
+<<<<<<< HEAD
+=======
+			// Use node width/height to override the data width/height when the placeholder is resized
+			data.width = node.attr('width') || data.width;
+			data.height = node.attr('height') || data.height;
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			// Handle iframe
 			if (typeItem.name === 'Iframe') {
 				replacement = new Node('iframe', 1);
@@ -422,8 +496,13 @@
 				// Create new object element
 				video = new Node('video', 1).attr(tinymce.extend({
 					id : node.attr('id'),
+<<<<<<< HEAD
 					width: node.attr('width'),
 					height: node.attr('height'),
+=======
+					width: normalizeSize(node.attr('width')),
+					height: normalizeSize(node.attr('height')),
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					style : style
 				}, data.video.attrs));
 
@@ -456,6 +535,60 @@
 					data.params.src = '';
 			}
 
+<<<<<<< HEAD
+=======
+			// Add HTML5 audio element
+			if (typeItem.name === 'Audio' && data.video.sources[0]) {
+				// Create new object element
+				audio = new Node('audio', 1).attr(tinymce.extend({
+					id : node.attr('id'),
+					width: normalizeSize(node.attr('width')),
+					height: normalizeSize(node.attr('height')),
+					style : style
+				}, data.video.attrs));
+
+				// Get poster source and use that for flash fallback
+				if (data.video.attrs)
+					posterSrc = data.video.attrs.poster;
+
+				sources = data.video.sources = toArray(data.video.sources);
+				if (!sources[0].type) {
+					audio.attr('src', sources[0].src);
+					sources.splice(0, 1);
+				}
+
+				for (i = 0; i < sources.length; i++) {
+					source = new Node('source', 1).attr(sources[i]);
+					source.shortEnded = true;
+					audio.append(source);
+				}
+
+				data.params.src = '';
+			}
+
+			if (typeItem.name === 'EmbeddedAudio') {
+				embed = new Node('embed', 1);
+				embed.shortEnded = true;
+				embed.attr({
+					id: node.attr('id'),
+					width: normalizeSize(node.attr('width')),
+					height: normalizeSize(node.attr('height')),
+					style : style,
+					type: node.attr('type')
+				});
+
+				for (name in data.params)
+					embed.attr(name, data.params[name]);
+
+				tinymce.each(rootAttributes, function(name) {
+					if (data[name] && name != 'type')
+						embed.attr(name, data[name]);
+				});
+
+				data.params.src = '';
+			}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			// Do we have a params src then we can generate object
 			if (data.params.src) {
 				// Is flv movie add player for it
@@ -468,14 +601,29 @@
 				// Create new object element
 				object = new Node('object', 1).attr({
 					id : node.attr('id'),
+<<<<<<< HEAD
 					width: node.attr('width'),
 					height: node.attr('height'),
+=======
+					width: normalizeSize(node.attr('width')),
+					height: normalizeSize(node.attr('height')),
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					style : style
 				});
 
 				tinymce.each(rootAttributes, function(name) {
+<<<<<<< HEAD
 					if (data[name] && name != 'type')
 						object.attr(name, data[name]);
+=======
+					var value = data[name];
+
+					if (name == 'class' && value)
+						value = value.replace(/mceItem.+ ?/g, '');
+
+					if (value && name != 'type')
+						object.attr(name, value);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				});
 
 				// Add params
@@ -508,8 +656,13 @@
 					embed.shortEnded = true;
 					embed.attr({
 						id: node.attr('id'),
+<<<<<<< HEAD
 						width: node.attr('width'),
 						height: node.attr('height'),
+=======
+						width: normalizeSize(node.attr('width')),
+						height: normalizeSize(node.attr('height')),
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						style : style,
 						type: typeItem.mimes[0]
 					});
@@ -548,8 +701,24 @@
 				}
 			}
 
+<<<<<<< HEAD
 			if (video || object)
 				node.replace(video || object);
+=======
+			if (audio) {
+				// Insert raw HTML
+				if (data.video_html) {
+					value = new Node('#text', 3);
+					value.raw = true;
+					value.value = data.video_html;
+					audio.append(value);
+				}
+			}
+
+			var n = video || audio || object || embed;
+			if (n)
+				node.replace(n);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			else
 				node.remove();
 		},
@@ -567,7 +736,12 @@
 			var object, embed, video, iframe, img, name, id, width, height, style, i, html,
 				param, params, source, sources, data, type, lookup = this.lookup,
 				matches, attrs, urlConverter = this.editor.settings.url_converter,
+<<<<<<< HEAD
 				urlConverterScope = this.editor.settings.url_converter_scope;
+=======
+				urlConverterScope = this.editor.settings.url_converter_scope,
+				hspace, vspace, align, bgcolor;
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			function getInnerHTML(node) {
 				return new tinymce.html.Serializer({
@@ -576,6 +750,18 @@
 				}).serialize(node);
 			};
 
+<<<<<<< HEAD
+=======
+			function lookupAttribute(o, attr) {
+				return lookup[(o.attr(attr) || '').toLowerCase()];
+			}
+
+			function lookupExtension(src) {
+				var ext = src.replace(/^.*\.([^.]+)$/, '$1');
+				return lookup[ext.toLowerCase() || ''];
+			}
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			// If node isn't in document
 			if (!node.parent)
 				return;
@@ -608,7 +794,11 @@
 
 			// Video element
 			name = node.name;
+<<<<<<< HEAD
 			if (name === 'video') {
+=======
+			if (name === 'video' || name == 'audio') {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				video = node;
 				object = node.getAll('object')[0];
 				embed = node.getAll('embed')[0];
@@ -624,7 +814,11 @@
 
 				source = node.attr('src');
 				if (source)
+<<<<<<< HEAD
 					data.video.sources.push({src : urlConverter.call(urlConverterScope, source, 'src', 'video')});
+=======
+					data.video.sources.push({src : urlConverter.call(urlConverterScope, source, 'src', node.name)});
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				// Get all sources
 				sources = video.getAll("source");
@@ -640,7 +834,11 @@
 
 				// Convert the poster URL
 				if (attrs.poster)
+<<<<<<< HEAD
 					attrs.poster = urlConverter.call(urlConverterScope, attrs.poster, 'poster', 'video');
+=======
+					attrs.poster = urlConverter.call(urlConverterScope, attrs.poster, 'poster', node.name);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			}
 
 			// Object element
@@ -665,6 +863,14 @@
 				height = height || object.attr('height');
 				style = style || object.attr('style');
 				id = id || object.attr('id');
+<<<<<<< HEAD
+=======
+				hspace = hspace || object.attr('hspace');
+				vspace = vspace || object.attr('vspace');
+				align = align || object.attr('align');
+				bgcolor = bgcolor || object.attr('bgcolor');
+				data.name = object.attr('name');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				// Get all object params
 				params = object.getAll("param");
@@ -685,6 +891,13 @@
 				height = height || embed.attr('height');
 				style = style || embed.attr('style');
 				id = id || embed.attr('id');
+<<<<<<< HEAD
+=======
+				hspace = hspace || embed.attr('hspace');
+				vspace = vspace || embed.attr('vspace');
+				align = align || embed.attr('align');
+				bgcolor = bgcolor || embed.attr('bgcolor');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				// Get all embed attributes
 				for (name in embed.attributes.map) {
@@ -695,10 +908,21 @@
 
 			if (iframe) {
 				// Get width/height
+<<<<<<< HEAD
 				width = iframe.attr('width');
 				height = iframe.attr('height');
 				style = style || iframe.attr('style');
 				id = iframe.attr('id');
+=======
+				width = normalizeSize(iframe.attr('width'));
+				height = normalizeSize(iframe.attr('height'));
+				style = style || iframe.attr('style');
+				id = iframe.attr('id');
+				hspace = iframe.attr('hspace');
+				vspace = iframe.attr('vspace');
+				align = iframe.attr('align');
+				bgcolor = iframe.attr('bgcolor');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				tinymce.each(rootAttributes, function(name) {
 					img.attr(name, iframe.attr(name));
@@ -721,6 +945,7 @@
 			if (data.params.src)
 				data.params.src = urlConverter.call(urlConverterScope, data.params.src, 'src', 'object');
 
+<<<<<<< HEAD
 			if (video)
 				type = lookup.video.name;
 
@@ -729,6 +954,25 @@
 
 			if (embed && !type)
 				type = (lookup[(embed.attr('type') || '').toLowerCase()] || {}).name;
+=======
+			if (video) {
+				if (node.name === 'video')
+					type = lookup.video.name;
+				else if (node.name === 'audio')
+					type = lookup.audio.name;
+			}
+
+			if (object && !type)
+				type = (lookupAttribute(object, 'clsid') || lookupAttribute(object, 'classid') || lookupAttribute(object, 'type') || {}).name;
+
+			if (embed && !type)
+				type = (lookupAttribute(embed, 'type') || lookupExtension(data.params.src) || {}).name;
+
+			// for embedded audio we preserve the original specified type
+			if (embed && type == 'EmbeddedAudio') {
+				data.params.type = embed.attr('type');
+			}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			// Replace the video/object/embed element with a placeholder image containing the data
 			node.replace(img);
@@ -753,13 +997,30 @@
 					data.video_html = html;
 			}
 
+<<<<<<< HEAD
+=======
+			data.hspace = hspace;
+			data.vspace = vspace;
+			data.align = align;
+			data.bgcolor = bgcolor;
+
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			// Set width/height of placeholder
 			img.attr({
 				id : id,
 				'class' : 'mceItemMedia mceItem' + (type || 'Flash'),
 				style : style,
+<<<<<<< HEAD
 				width : width || "320",
 				height : height || "240",
+=======
+				width : width || (node.name == 'audio' ? "300" : "320"),
+				height : height || (node.name == 'audio' ? "32" : "240"),
+				hspace : hspace,
+				vspace : vspace,
+				align : align,
+				bgcolor : bgcolor,
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 				"data-mce-json" : JSON.serialize(data, "'")
 			});
 		}
@@ -767,4 +1028,8 @@
 
 	// Register plugin
 	tinymce.PluginManager.add('media', tinymce.plugins.MediaPlugin);
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8

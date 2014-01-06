@@ -10,5 +10,9 @@ var tinyMCEMediaList = [
 	["Some RealMedia", "media/sample.rm"],
 	["Some Shockwave", "media/sample.dcr"],
 	["Some Video", "media/sample.mp4"],
+<<<<<<< HEAD
 	["Some FLV", "media/sample.flv"],
+=======
+	["Some FLV", "media/sample.flv"]
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 ];

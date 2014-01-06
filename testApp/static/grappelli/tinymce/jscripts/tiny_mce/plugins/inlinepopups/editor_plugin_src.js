@@ -219,7 +219,14 @@
 				t.focus(id);
 
 				if (n.nodeName == 'A' || n.nodeName == 'a') {
+<<<<<<< HEAD
 					if (n.className == 'mceMax') {
+=======
+					if (n.className == 'mceClose') {
+						t.close(null, id);
+						return Event.cancel(e);
+					} else if (n.className == 'mceMax') {
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 						w.oldPos = w.element.getXY();
 						w.oldSize = w.element.getSize();
 

@@ -16,10 +16,19 @@
 		cleanre : null,
 
 		init : function(ed, url) {
+<<<<<<< HEAD
 			var t = this, last = 0;
 
 			t.countre = ed.getParam('wordcount_countregex', /[\w\u2019\'-]+/g); // u2019 == &rsquo;
 			t.cleanre = ed.getParam('wordcount_cleanregex', /[0-9.(),;:!?%#$?\'\"_+=\\\/-]*/g);
+=======
+			var t = this, last = 0, VK = tinymce.VK;
+
+			t.countre = ed.getParam('wordcount_countregex', /[\w\u2019\'-]+/g); // u2019 == &rsquo;
+			t.cleanre = ed.getParam('wordcount_cleanregex', /[0-9.(),;:!?%#$?\'\"_+=\\\/-]*/g);
+			t.update_rate = ed.getParam('wordcount_update_rate', 2000);
+			t.update_on_delete = ed.getParam('wordcount_update_on_delete', false);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			t.id = ed.id + '-word-count';
 
 			ed.onPostRender.add(function(ed, cm) {
@@ -49,12 +58,27 @@
 				t._count(ed);
 			});
 
+<<<<<<< HEAD
 			ed.onKeyUp.add(function(ed, e) {
 				if (e.keyCode == last)
 					return;
 
 				if (13 == e.keyCode || 8 == last || 46 == last)
 					t._count(ed);
+=======
+			function checkKeys(key) {
+				return key !== last && (key === VK.ENTER || last === VK.SPACEBAR || checkDelOrBksp(last));
+			}
+
+			function checkDelOrBksp(key) {
+				return key === VK.DELETE || key === VK.BACKSPACE;
+			}
+
+			ed.onKeyUp.add(function(ed, e) {
+				if (checkKeys(e.keyCode) || t.update_on_delete && checkDelOrBksp(e.keyCode)) {
+					t._count(ed);
+				}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 				last = e.keyCode;
 			});
@@ -91,11 +115,19 @@
 			t.block = 1;
 
 			setTimeout(function() {
+<<<<<<< HEAD
 					var tc = t._getCount(ed);
 
 					tinymce.DOM.setHTML(t.id, tc.toString());
 
 					setTimeout(function() {t.block = 0;}, 2000);
+=======
+				if (!ed.destroyed) {
+					var tc = t._getCount(ed);
+					tinymce.DOM.setHTML(t.id, tc.toString());
+					setTimeout(function() {t.block = 0;}, t.update_rate);
+				}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 			}, 1);
 		},
 

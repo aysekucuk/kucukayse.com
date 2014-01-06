@@ -351,10 +351,23 @@
 				});
 			}
 
+<<<<<<< HEAD
 			if (styles)
 				dom.add(self.editor.getDoc().getElementsByTagName('head')[0], 'style', {id : 'fullpage_styles'}, styles);
 			else
 				dom.remove('fullpage_styles');
+=======
+			dom.remove('fullpage_styles');
+
+			if (styles) {
+				dom.add(self.editor.getDoc().getElementsByTagName('head')[0], 'style', {id : 'fullpage_styles'}, styles);
+
+				// Needed for IE 6/7
+				elm = dom.get('fullpage_styles');
+				if (elm.styleSheet)
+					elm.styleSheet.cssText = styles;
+			}
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 		},
 
 		_getDefaultHeader : function() {
@@ -367,7 +380,11 @@
 			header += '\n<html>\n<head>\n';
 
 			if (value = editor.getParam('fullpage_default_title'))
+<<<<<<< HEAD
 				header += '<title>' + v + '</title>\n';
+=======
+				header += '<title>' + value + '</title>\n';
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
 			if (value = editor.getParam('fullpage_default_encoding'))
 				header += '<meta http-equiv="Content-Type" content="text/html; charset=' + value + '" />\n';

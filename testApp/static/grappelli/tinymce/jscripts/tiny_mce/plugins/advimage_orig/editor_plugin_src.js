@@ -14,7 +14,11 @@
 			// Register commands
 			ed.addCommand('mceAdvImage', function() {
 				// Internal image object like a flash placeholder
+<<<<<<< HEAD
 				if (ed.dom.getAttrib(ed.selection.getNode(), 'class').indexOf('mceItem') != -1)
+=======
+				if (ed.dom.getAttrib(ed.selection.getNode(), 'class', '').indexOf('mceItem') != -1)
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					return;
 
 				ed.windowManager.open({

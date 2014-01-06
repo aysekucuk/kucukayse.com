@@ -68,7 +68,11 @@
 					},
 
 					// Setup font elements for colors as well
+<<<<<<< HEAD
 					forecolor : {inline : 'font', styles : {color : '%value'}},
+=======
+					forecolor : {inline : 'font', attributes : {color : '%value'}},
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 					hilitecolor : {inline : 'font', styles : {backgroundColor : '%value'}}
 				});
 

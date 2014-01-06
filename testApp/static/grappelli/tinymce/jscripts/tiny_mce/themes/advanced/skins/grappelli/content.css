@@ -24,4 +24,11 @@
 /* Import other styles */
 @import url('content_base.css');
 @import url('content_typography.css');
+<<<<<<< HEAD
 @import url('content_grid.css');
+=======
+@import url('content_grid.css');
+
+/* All other custom styles (everything else what Grappelli users might want to deploy) */
+@import url('customized.css');
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
