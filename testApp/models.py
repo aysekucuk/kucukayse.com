@@ -58,6 +58,11 @@ class Blog(models.Model):
         self.slug = slugify(self.title.upper())
         super(Blog, self).save()
 
+    @staticmethod
+    def autocomplete_search_fields():
+        return ("id__iexact", "name__icontains",)
+
+
 class Comment(models.Model):
     email = models.EmailField()
     name = models.CharField(max_length = 100)
