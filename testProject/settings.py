@@ -22,7 +22,7 @@ SECRET_KEY = '36*3xk^+q%5*v7(%vnf(&1ygvcm48a96&2spy6%drxj(!4@$46'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-
+THUMBNAIL_DEBUG = True
 ALLOWED_HOSTS = []
 
 
@@ -95,6 +95,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 MEDIA_ROOT =BASE_DIR
 MEDIA_URL = "/"
+print MEDIA_URL
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
 
 TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/boxme/wide/")
