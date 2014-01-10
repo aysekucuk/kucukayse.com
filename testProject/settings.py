@@ -107,7 +107,7 @@ STATICFILES_FINDERS = (
 
 THUMBNAIL_ALIASES = {
     '': {
-        'bigpost': {'size': (250, 200), 'crop': "scale"},
+        'bigpost': {'size': (250, 200), 'crop': True},
         'smallpost': {'size':(70,50),'crop':True},
     },
 }
