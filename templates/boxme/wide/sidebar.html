@@ -16,7 +16,7 @@
         {% for recent in recents %}
           <li class="clearfix">
           <div class="pull-left blg-img">
-          <img src="{{ recent.photo.file|thumbnail_url:'smallpost' }}" alt="" />
+          <img src="{{ recent.photo.file}}" alt="" width="70" height ="50" />
           </div>
             <div class="pull-left blg-txt">
               <p><a href="{% url 'detail' recent.slug %}">{{recent.title}}</a></p>
@@ -24,7 +24,6 @@
             </div>
           </li>
           {% endfor %}
-        
         </ul>
       </div>
       <div class="sidebar-tags margint30 clearfix">
