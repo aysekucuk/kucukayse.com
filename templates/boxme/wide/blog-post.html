@@ -10,8 +10,8 @@
         <div class="blog-infobox margint30 clearfix">
           <div class="pull-left">
             <div class="blog-date-box">
-              <p class="blog-date-day">23</p>
-              <p class="blog-date-month">Sep</p>
+              <p class="blog-date-day">{{post_detail.date|date:"j" }}</p>
+              <p class="blog-date-month">{{post_detail.date|date:"M"}}</p>
             </div>
           </div>
           <div class="pull-left blog-info-list">
@@ -21,7 +21,7 @@
         <div class="blog-post-pad">
           <div class="drpcp">
           <img src="{{ post_detail.photo.file |thumbnail_url:'bigpost' }}" alt="" class="img-responsive drpcp-img" align="left"/>
-            {{post_detail.content}}
+            {{post_detail.content|safe}}
           </div>
           <div class="post-tag-area margint30 clearfix">
             <p class="pull-left">Tags :</p>
