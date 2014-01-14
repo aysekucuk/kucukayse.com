@@ -1,6 +1,10 @@
 ﻿/* German initialisation for the jQuery UI date picker plugin. */
 /* Written by Milian Wolff (mail@milianw.de). */
+<<<<<<< HEAD
+jQuery(function($){
+=======
 (function($){
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	$.datepicker.regional['de'] = {
 		closeText: 'schließen',
 		prevText: '&#x3c;zurück',
@@ -16,5 +20,9 @@
 		dateFormat: 'yy-mm-dd', firstDay: 1,
 		isRTL: false};
 	$.datepicker.setDefaults($.datepicker.regional['de']);
+<<<<<<< HEAD
+});
+=======
 })(grp.jQuery);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 
