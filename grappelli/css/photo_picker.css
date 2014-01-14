@@ -1,0 +1,16 @@
+.photo_picker
+{
+	max-width: 758px;
+}
+.photo_picker li
+{
+	float:left;
+	margin: 4px;
+	border: 1px solid #E0E0E0;
+}
+
+.photo_picker li.active
+{
+	border: 2px dashed #309BBF;
+	margin: 3px;
+}

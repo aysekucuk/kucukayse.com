@@ -25,9 +25,9 @@ tinyMCE.init({
     // see http://www.tinymce.com/wiki.php/Configuration
     
     // Init
-    mode: 'textareas',
-    theme: 'advanced',
-    skin: 'grappelli',
+    // mode: 'textareas',
+    // theme: 'advanced',
+    // skin: 'grappelli',
     
     // General
     accessibility_warnings: false,
@@ -53,7 +53,9 @@ tinyMCE.init({
         {title: 'Paragraph Small', block : 'p', classes: 'p_small'},
         {title: 'Paragraph ImageCaption', block : 'p', classes: 'p_caption'},
         {title: 'Clearfix', block : 'p', classes: 'clearfix'},
-        {title: 'Code', block : 'p', classes: 'code'}
+        {title: 'Code', block : 'p', classes: 'code'},
+        {title: 'Ayse', block : 'p', classes: 'ayse'}
+
     ],
     verify_html: true,
 
