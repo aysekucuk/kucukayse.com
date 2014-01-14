@@ -22,8 +22,8 @@ class BlogAdmin(admin.ModelAdmin):
 
 	class Media:
 		js = [
-			'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
-			'grappelli/tinymce_setup/tinymce_setup.js',
+			settings.STATIC_URL+'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+			settings.STATIC_URL+'grappelli/tinymce_setup/tinymce_setup.js',
 		]
 
 class CategoryAdmin(admin.ModelAdmin):
