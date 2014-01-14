@@ -1,6 +1,10 @@
 ﻿/* French initialisation for the jQuery UI date picker plugin. */
 /* Written by Keith Wood (kbwood@virginbroadband.com.au) and Stéphane Nahmani (sholby@sholby.net). */
+<<<<<<< HEAD
+jQuery(function($){
+=======
 (function($){
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
 	$.datepicker.regional['fr'] = {
 		closeText: 'Fermer',
 		prevText: '&#x3c;Préc',
@@ -16,4 +20,8 @@
 		dateFormat: 'yy-mm-dd', firstDay: 1,
 		isRTL: false};
 	$.datepicker.setDefaults($.datepicker.regional['fr']);
+<<<<<<< HEAD
+});
+=======
 })(grp.jQuery);
+>>>>>>> 11a0730e5d256a0d82683a0c9d7069d28b900dd8
