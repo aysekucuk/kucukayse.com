@@ -27,6 +27,7 @@ def post_detail(request,slug=None):
 	return render(request, 'blog-post.html', {'post_detail' : post_detail , 'comments':comments})	
 
 def archive(request, date):
+
 	first = datetime.strptime(date, "%Y-%m-%d")
 	end = first + timedelta(calendar.mdays[first.month])
 	posts = Blog.objects.filter(date__gte=first, date__lte=end)
@@ -77,7 +78,6 @@ def search(request):
 			if list:
 				total = len(list[0])
 
-	print "----list",list
 	return render_to_response('search-results.html', RequestContext(request, {
 		"list": list,
 		"q": q,
