@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 	url(r'^$', 'testApp.views.contents', name='home'),
 	url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
 	url(r'^admin/', include(admin.site.urls)),
+	url(r'^search/$' , 'testApp.views.search', name='search'),
 	url(r'^arsiv/(?P<date>[-\d]+)$', 'testApp.views.archive', name='archive'),
 	url(r'^kategori/(?P<slug>[-\w]+)/$', 'testApp.views.category', name='category'),
 	url(r'^etiket/(?P<slug>[-\w]+)/$', 'testApp.views.tag', name='tag'),

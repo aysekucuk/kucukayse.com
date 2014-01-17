@@ -50,6 +50,7 @@ class Blog(models.Model):
     slug = models.SlugField(max_length = 100, blank=True,null = True)
     photo = models.ForeignKey('testApp.Media',blank=True,null=True)
     commment_count = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.title
