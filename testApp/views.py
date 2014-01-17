@@ -16,7 +16,7 @@ def contents(request):
 def pages(request,slug=None):
 	try:
 		pages = get_object_or_404(MainMenu, slug = slug)  # Gelen sayfanın slugına göre Menuyu buluyor.
-		posts = pages.blog_set.filter(status=True) # o menuye ait blog yazılarını çekiyor posts listesine atıyor
+		posts = pages.blog_set.filter(is_active=True) # o menuye ait blog yazılarını çekiyor posts listesine atıyor
 	except Exception, e:
 		posts = []
 	return render(request, 'blog-list-right-sidebar.html', {'posts':posts})
