@@ -28,9 +28,9 @@ def post_detail(request,slug=None):
 
 def archive(request, date):
 
-	first = datetime.strptime(date, "%Y-%m-%d")
+	first = datetime.strptime(date+"-01", "%Y-%m-%d")
 	end = first + timedelta(calendar.mdays[first.month])
-	posts = Blog.objects.filter(date__gte=first, date__lte=end)
+	posts = Blog.objects.filter(date__gte=first, date__lte=end).order_by('-date')
 
 	return render(request, "blog-list-right-sidebar.html", {'posts' : posts})
 
