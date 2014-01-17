@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,render_to_response,RequestContext
 from testApp.models import *
 from django.core.paginator import Paginator
 from datetime import datetime, timedelta
@@ -47,3 +47,39 @@ def tag(request,slug=None):
 	except Exception, e:
 		return render(request,'blog-list-right-sidebar.html',{})
 	
+def search(request):
+
+	from django.db.models import Q		
+
+	q = request.GET.get("search", "")
+
+	if len(q) > 2:
+		splits = q.split()
+		list=[]
+		for split in splits:
+			query = Q(title__icontains=split) | Q(content__icontains=split)
+
+			posts = Blog.objects.filter(query,is_active=True).distinct().order_by('date')
+
+			if posts:
+				list.append(posts)
+			total = 0
+			if list:
+				total = len(list[0])
+	else:
+		list =[]
+		query = Q(title__icontains=q) | Q(content__icontains=q)
+		posts = Blog.objects.filter(query,is_active=True).distinct().order_by('date')
+		if posts:
+			for post in posts:
+				list.append(post)
+			total=0
+			if list:
+				total = len(list[0])
+
+	print "----list",list
+	return render_to_response('search-results.html', RequestContext(request, {
+		"list": list,
+		"q": q,
+		"total": total,
+		}))

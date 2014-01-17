@@ -28,7 +28,9 @@
           </nav>
           <div class="pull-right search">
             <div class="pull-left search-box">
-              <input type="text" name="search" />
+              <form method="get" action="{% url 'search' %}{% filter urlencode %}{{search}}{% endfilter %}">
+                 <input type="text" name="search" placeholder="Blog'da Ara">
+             </form>
             </div>
             <a class="pull-right" href="#"><i class="icon-search"></i></a></div>
         </div>
