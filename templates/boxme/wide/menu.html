@@ -8,10 +8,11 @@
         <div class="pull-right menu">
           <nav class="pull-left menu-bar" id="responsive-menu">
             <ul class="site-menu" id="site-menu">
-              <li><a class="active" href="{% url 'home' %}">Ana sayfa</a>  
+              <li><a class="{% if url == "" %}active{% endif %}" href="{% url 'home' %}">Ana sayfa</a>  
               {% for menu in menus %}
               {% if not menu.parent %}
-              <li><a class="" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
+              {% with menu.slug as slugg %}
+              <li><a class="{% if url == slugg %}active {% endif %}" href="{% url 'page' menu.slug %}">{{menu.name}}</a>  
                 <ul>
                   {% for i in menus %}
                     {% if i.parent == menu %}
@@ -20,6 +21,7 @@
                   {% endfor %}
                 </ul>
               </li>
+              {% endwith %}
               {% endif %}
               {% endfor %}
             </ul>

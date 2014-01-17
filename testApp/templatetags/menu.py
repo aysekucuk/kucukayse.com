@@ -8,8 +8,10 @@ register = template.Library()
 @register.inclusion_tag('menu.html', takes_context=True)
 def menu(context):
 	request = context['request']
+	url = request.path.split("/")
+	url = url[1]
 	try:
 		menus = MainMenu.objects.filter(status=True)
-		return {'menus':menus}
+		return {'menus':menus,'url':url}
 	except Exception, e:
-		return {}
+		return {'url':url}
