@@ -16,7 +16,7 @@ class BlogAdmin(admin.ModelAdmin):
         }),
 		 ('icerik', {
             'classes': ('collapse-open',),
-            'fields' : ('category', 'menu',),
+            'fields' : ('category', 'menu','tags'),
         }),
 		 )
 
