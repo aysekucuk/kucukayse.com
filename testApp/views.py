@@ -83,3 +83,8 @@ def search(request):
 		"q": q,
 		"total": total,
 		}))
+
+def page_not_found(request):
+	return render_to_response('404.html',
+	{},
+	context_instance=RequestContext(request))
