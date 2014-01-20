@@ -16,7 +16,7 @@ def sidebar(context):
 	archive = Blog.objects.filter(is_active=True).extra(select={'month':connections[Blog.objects.db].ops.date_trunc_sql('month', 'date')}).values('month').annotate(total=Count('date')).order_by('-month')
 	archive = [{'date': datetime.strptime(str(i['month'].year)+"-"+str(i['month'].month), "%Y-%m"), 'count' : i['total'] } for i in archive]
 	
-	print "------",archive[0].get('date')
+	#print "------",archive[0].get('date')
 	context['archive'] = archive
 
 	return context
