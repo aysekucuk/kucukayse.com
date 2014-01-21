@@ -2,7 +2,7 @@ db.sqlite3
 *.pyc
 .idea
 
-test_project_2/gallery/
+gallery/
 
 ._*
 .DS_Store

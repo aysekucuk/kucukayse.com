@@ -90,7 +90,9 @@ USE_L10N = True
 USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-STATIC_ROOT =BASE_DIR
+
+#STATIC_ROOT = BASE_DIR
+
 STATIC_URL = "/static/"
 MEDIA_ROOT =BASE_DIR
 MEDIA_URL = "/"
@@ -99,7 +101,7 @@ MEDIA_URL = "/"
 #TEMPLATE_URL = (BASE_DIR,"/templates/")
 
 TEMPLATE_DIRS = os.path.join(BASE_DIR ,"templates/boxme/wide/")
-
+#STATICFILES_DIRS = BASE_DIR
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
