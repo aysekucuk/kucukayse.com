@@ -9,6 +9,3 @@ def footer(context):
 	context['recents'] = Blog.objects.filter(is_active=True).order_by('-date')[0:5]
 
 	return context
-
-
-

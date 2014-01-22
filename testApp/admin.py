@@ -3,7 +3,7 @@ from django.conf import settings
 from testApp.models import *
 
 class BlogAdmin(admin.ModelAdmin):
-	list_display = ("title","content","date","category")
+	list_display = ("title","date","category")
 	readonly_fields = ('slug',)
 	search_fields = ['title']
 
