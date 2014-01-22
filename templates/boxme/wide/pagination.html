@@ -1,0 +1,30 @@
+{% if pager.total_pages > 1 %}
+<!-- PAGINATION -->
+	<div class="pagination clearfix tags">
+		{% if pager.has_previous %}
+		<span>
+			<a href="?sayfa={{ pager.previous_page }}{% for key, value in pager.data.items %}{% if not key == "sayfa" %}&{{key}}={{value}}{% endif %}{% endfor %}" class="prev">
+				Önceki Sayfa
+			</a>
+		</span>
+		{% endif %}
+		
+		{% for i in pager.items %}
+		{% if i == 0 %}
+		<span><a href="#">&hellip;</a></span>
+		{% else %}
+		<span {% if i == pager.current_page %}class="active" {% endif %}><a href="?sayfa={{ i }}{% for key, value in pager.data.items %}{% if not key == "sayfa" %}&{{key}}={{value}}{% endif %}{% endfor %}">{{ i}}</a></span>
+		{% endif %}
+		{% endfor %}
+		
+		{% if pager.has_next %}
+		<span>
+			<a href="?sayfa={{ pager.next_page }}{% for key, value in pager.data.items %}{% if not key == "sayfa" %}&{{key}}={{value}}{% endif %}{% endfor %}" class="next">
+				Sonraki Sayfa
+			</a>
+		</span>
+		{% endif %}
+
+	</div>
+<!-- /PAGINATION -->
+{% endif %}

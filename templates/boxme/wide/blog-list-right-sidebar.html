@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% load sidebar %}
+{% load pager %}
+
 {% block main %}
   <!-- NAVIGATION -->
 <div id="breadcrumb">
@@ -44,5 +46,6 @@
   {% sidebar %}
   </div>
 </div>
+{% pager posts %}
 <!-- FOOTER -->
 {% endblock %}

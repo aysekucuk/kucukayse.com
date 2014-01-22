@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 	url(r'^etiket/(?P<slug>[-\w]+)/$', 'testApp.views.tag', name='tag'),
 	url(r'^post/(?P<slug>[-\w]+)/$', 'testApp.views.post_detail', name='detail'),
 	url(r'^(?P<slug>[-\w]+)/$', 'testApp.views.pages', name='page'),
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    #url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'testApp.views.page_not_found'

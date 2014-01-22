@@ -7,11 +7,15 @@ import calendar
 
 
 def contents(request):
-	try:
-		posts = Blog.objects.all().order_by('-date')[0:10]
-	except Exception, e:
-		posts = []
-	return render(request,"blog-list-right-sidebar.html",{"posts":posts,})
+	if request.GET.get('sayfa'):
+		pagenumber = request.GET.get('sayfa')
+	else:
+		pagenumber = 1
+
+	paginator = Paginator(Blog.objects.all().order_by('-date'),10)
+	posts = paginator.page(pagenumber)		
+
+	return render(request,"blog-list-right-sidebar.html",{"posts":posts})
 
 def pages(request,slug=None):
 	try:
