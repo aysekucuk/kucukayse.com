@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 from testApp.templatetags import menu
 import settings
 
+from django.views.generic import TemplateView
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
