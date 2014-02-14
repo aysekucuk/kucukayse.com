@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 	# Examples:
 	#url(r'^.*$', RedirectView.as_view(url='<url_to_home_view>', permanent=False), name='index'),
 	url(r'^$', 'testApp.views.contents', name='home'),
-	url(r'^google3a86ba1c6ba9b80c\.html$', TemplateView.as_view(template_name="main/google3a86ba1c6ba9b80c.html"), name='google3a86ba1c6ba9b80c'),
+	url(r'^google3a86ba1c6ba9b80c\.html$', TemplateView.as_view(template_name="google3a86ba1c6ba9b80c.html"), name='google3a86ba1c6ba9b80c'),
 	url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^search/$' , 'testApp.views.search', name='search'),
