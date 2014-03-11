@@ -26,3 +26,17 @@ urlpatterns = patterns('',
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'testApp.views.page_not_found'
+
+# Sitemap
+from django.contrib.sitemaps import GenericSitemap
+from django.contrib.sitemaps import views as sitemaps_views
+from testApp.models import Blog
+
+sitemaps = {
+	'post': GenericSitemap({'queryset': Blog.objects.filter(is_active=True), 'date': 'date'}, priority=1, changefreq='daily'),
+}
+
+urlpatterns += (
+	url(r'^sitemap\.xml$', sitemaps_views.index, {'sitemaps': sitemaps}),
+	url(r'^sitemap-(?P<section>.+)\.xml$', sitemaps_views.sitemap, {'sitemaps': sitemaps}),
+)
