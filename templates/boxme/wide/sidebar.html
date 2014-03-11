@@ -40,7 +40,9 @@
         <hr class="sidebar-underline">
         <ul class="sidebar-category">
           {% for month in archive %}
+         <li>
             <a href="{% url 'archive' month.date|date:"Y-m" %}" title="{{month.date|date:"F Y"}}">{{month.date|date:"F Y"}} ( {{month.count}} )</a>
+        </li>
           {% endfor %}
         </ul>
       </div>
